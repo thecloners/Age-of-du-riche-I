@@ -16,9 +16,7 @@ int main()
                 window.close();
         }
         Personnage test;
-        window.clear();
-        window.draw(test);
-        window.display();
+        Personnage getporte();
     }
 
     return 0;

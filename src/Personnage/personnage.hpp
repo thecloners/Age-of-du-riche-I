@@ -6,7 +6,7 @@ using namespace std;
 #ifndef PERSONNAGE
 #define PERSONNAGE
 
-class Personnage
+class Personnage //: public sf::Drawable{
 {
 
     private:
@@ -16,7 +16,7 @@ class Personnage
       int mDegat;
       int mPortee;
       sf::Vector2f mcible;
-      virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
+      //virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 
 
 
@@ -27,6 +27,7 @@ class Personnage
       void definircible();
       void mouvement();
       void attaque();
+      void getporte();
 
 
 
