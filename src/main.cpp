@@ -14,7 +14,7 @@ int main()
             if (event.type == sf::Event::Closed)
                 window.close();
         }
-        Personnage test;
+        //Personnage test;
         window.clear();
         window.draw(shape);
         window.display();
