@@ -15,7 +15,7 @@ class Personnage
       sf::Vector2f mPosition;
       int mDegat;
       int mPortee;
-      int mcible;
+      sf::Vector2f mcible;
 
       //virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 

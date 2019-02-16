@@ -6,7 +6,7 @@ using namespace std;
 
 Personnage::Personnage()
 {
-      mvie = 100;
+      mVie = 100;
       mVieMax = 100;
       mDegat = 100;
       mcible = {100,100};
