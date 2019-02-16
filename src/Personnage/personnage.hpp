@@ -17,14 +17,14 @@ class Personnage
       int mPortee;
       int mCurrentTarget;
 
-      virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
+      //virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 
 
 
 
     public:
       Personnage();
-      void definetarget();
+      void definircible();
       void mouvement();
       void attaque();
 
