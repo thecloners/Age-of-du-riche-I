@@ -11,11 +11,13 @@ class Batiments
   private:
     int pv;
     int taille;
-    int position;
-    
+    int x;
+    int y;
+    int auto_gene;
+
   public:
     void recevoirDegats (int degats);
-
+    Batiments(bat_t nom, int x,int y);
 
 
 
