@@ -1,11 +1,15 @@
-class Personnage
-{
-      int mVie;
-      int mVieMax;
-      int mPosition;
-      int mDegat;
-      int mPortee;
-      
+#include <iostream>
+#include <SFML/Graphics.hpp>
+#include <string>
+using namespace std;
+void Personnage::definetarget(){
 
+}
 
-};
+void Personnage::mouvement(){
+
+}
+
+void Personnage::attaque(){
+
+}
