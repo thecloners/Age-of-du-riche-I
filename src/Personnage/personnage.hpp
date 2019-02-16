@@ -23,13 +23,10 @@ class Personnage
 
 
     public:
-      void mouvement() {
-
-      }
-
-      void attaque() {
-
-      }
+      Personnage();
+      void definetarget();
+      void mouvement();
+      void attaque();
 
 
 
