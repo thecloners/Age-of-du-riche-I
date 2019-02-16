@@ -9,15 +9,15 @@ class Partie
     private :
 
  int mNbJoueur;
- int taillePlateau;
  int mNbTour;
-void genereMap();
+
+ void genereMap();
 
     public :
  std::string nomParti;
- void affichPlateau(int taille);
+ void affichPlateau();
  void win();
- 
+
  void run();
 
 

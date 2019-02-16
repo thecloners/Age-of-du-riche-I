@@ -1,11 +1,10 @@
 #include "partie.hpp"
 
 
-void Partie::affichPlateau(int taille)
+void Partie::affichPlateau()
 {
-int i,j;
-for (i = 0;i < taille; i++)
-    for(j = 0; j < taille ; j++)
+for (int i = 0;i < taillePlateau; i++)
+    for(int j = 0; j < taille ; j++)
     {
 
     }
