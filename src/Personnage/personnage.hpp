@@ -16,14 +16,14 @@ class Personnage
       int mDegat;
       int mPortee;
       sf::Vector2f mcible;
-
-      //virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
+      virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 
 
 
 
     public:
       Personnage();
+      void dessiner(sf::Vector2f position);
       void definircible();
       void mouvement();
       void attaque();
