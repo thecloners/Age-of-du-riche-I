@@ -2,6 +2,10 @@
 #include <SFML/Graphics.hpp>
 #include <string>
 using namespace std;
+
+#ifndef PERSONNAGE
+#define PERSONNAGE
+
 class Personnage
 {
 
@@ -30,3 +34,4 @@ class Personnage
 
 
 };
+#endif
