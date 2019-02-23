@@ -10,6 +10,7 @@ class Personnage //: public sf::Drawable{
 {
 
     private:
+      sf::Vector2f mPositionEnnemi;
       int mVie;
       int mVieMax;
       sf::Vector2f mPosition;
@@ -25,9 +26,12 @@ class Personnage //: public sf::Drawable{
       Personnage();
       void dessiner(sf::Vector2f position);
       void definircible();
+      void definirennemi();
+      void peutattaquercible();
       void mouvement();
       void attaque();
       void getporte();
+
 
 
 
