@@ -17,6 +17,10 @@ class Personnage //: public sf::Drawable{
       int mDegat;
       int mPortee;
       sf::Vector2f mcible;
+      int coupEnOr;
+      int coupEnNourriture;
+      int coupEnBois;
+      int coupEnPierre;
       //virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 
 
@@ -31,6 +35,7 @@ class Personnage //: public sf::Drawable{
       void mouvement();
       void attaque();
       void getporte();
+      void evoluer();
 
 
 
