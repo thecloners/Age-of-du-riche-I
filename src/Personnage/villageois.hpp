@@ -13,7 +13,7 @@
 
 
 
-class Guerrier : public Personnage
+class villageois : public Personnage
 
 
 {
