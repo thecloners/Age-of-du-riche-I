@@ -17,10 +17,10 @@ class Personnage //: public sf::Drawable{
       int mDegat;
       int mPortee;
       sf::Vector2f mcible;
-      int coupEnOr;
-      int coupEnNourriture;
-      int coupEnBois;
-      int coupEnPierre;
+      int mCoupEnOr;
+      int mCoupEnNourriture;
+      int mCoupEnBois;
+      int mCoupEnPierre;
       //virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 
 
