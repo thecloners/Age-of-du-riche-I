@@ -12,6 +12,10 @@ Personnage::Personnage()
       mcible = {100,100};
       mPortee = 100;
       mPosition = {100, 100};
+      mCoupEnOr = 1;
+      mCoupEnBois = 1;
+      mCoupEnPierre = 1;
+      mCoupEnNourriture = 1;
 }
 void Personnage::getporte() {
       std::cout << mPortee << std::endl;
