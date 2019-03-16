@@ -17,7 +17,6 @@ class Villageois : public Personnage
 
 {
 public:
-    Villageois();
     void recolteressource()const;
     void construirebatiments()const;
 
