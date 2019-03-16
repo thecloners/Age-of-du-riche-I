@@ -27,3 +27,31 @@ void Partie::update()
 void Partie::sendEvent(sf::Event)
 {
 }
+
+void Partie::genereMap()
+{
+    int i,j;
+    for (i = 0;i <=mTaillePlateau; i++)
+    {
+        for (j = 0;j <=mTaillePlateau; j++)
+        {
+            unsigned int x = rand()%4;
+            if (x == 1)
+            {
+                mMap[i][j] = mer;
+            }
+            if (x == 2)
+            {
+                mMap[i][j] = Case::plaine;
+            }
+            if (x == 3)
+            {
+                Partie::mMap[i][j] = Case::roche;
+            }
+            if (x == 4)
+            {
+                Partie::mMap[i][j] = Case::foret;
+            }
+        }
+    }
+}

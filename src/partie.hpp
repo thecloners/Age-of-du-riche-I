@@ -10,9 +10,10 @@ class Partie : public sf::Drawable
 {
   private:
     int mNbJoueur;
-    int mTaillePlateau;
-    int mNbTour; // Wtf les gars y'a pas de tours dans AOII
+    const int mTaillePlateau = 100;
     void genereMap();
+    Case mMap[mTaillePlateau][mTaillePlateau];
+
     virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
     // Fonction qui est appellée quand on fait window.draw(partie)
     // En gros, RenderTarget s'utilise comme window.
