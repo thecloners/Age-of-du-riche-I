@@ -24,6 +24,6 @@ void Partie::update()
 }
 
 // Cette fonction récupère les évènements du clavier
-void sendEvent(sf::Event) 
+void Partie::sendEvent(sf::Event) 
 {
 }

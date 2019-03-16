@@ -6,7 +6,7 @@
 
 // On hérite de la classe Drawable qui nous permet de nous faire dessiner
 
-class Partie : sf::Drawable 
+class Partie : public sf::Drawable 
 {
   private:
     int mNbJoueur;
