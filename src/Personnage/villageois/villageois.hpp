@@ -12,7 +12,6 @@
 
 
 
-
 class villageois : public Personnage
 
 
