@@ -9,13 +9,13 @@ Personnage::Personnage()
       mVie = 100;
       mVieMax = 100;
       mDegat = 100;
-      mcible = {100,100};
+      mCible = {100,100};
       mPortee = 100;
       mPosition = {100, 100};
-      mCoupEnOr = 1;
-      mCoupEnBois = 1;
-      mCoupEnPierre = 1;
-      mCoupEnNourriture = 1;
+      mCoutEnOr = 1;
+      mCoutEnBois = 1;
+      mCoutEnPierre = 1;
+      mCoutEnNourriture = 1;
 }
 void Personnage::getporte() {
       std::cout << mPortee << std::endl;
