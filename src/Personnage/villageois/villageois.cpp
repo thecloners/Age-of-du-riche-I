@@ -6,7 +6,7 @@ using namespace std;
 
 
 // Tu veux construire Villageois, pas Personnage!!
-Villageois::villageois() : Personnage(
+Villageois::Villageois() : Personnage(
       int vieMax,
       int Degat,
       int Portee,
@@ -14,6 +14,7 @@ Villageois::villageois() : Personnage(
       int Cible,
       int position
 )
+
 {
       mVie = Vie;              // Bien tenté, mais non.
       mVieMax = vieMax;           // On doit venir passer ces arguments au constructeur

@@ -12,7 +12,7 @@
 
 
 
-class villageois : public Personnage
+class Villageois : public Personnage
 
 
 {

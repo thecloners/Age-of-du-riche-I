@@ -17,7 +17,7 @@ int main()
                 window.close();
         }
         window.draw(perso()); // Appelle la fonction draw de Personnage
-        perso().getporte();   // Appelle getporte
+      // Appelle getporte
         // Personnage getporte(); // Mauvaise syntaxe!!, c'est perso.getporte();
     }
 
