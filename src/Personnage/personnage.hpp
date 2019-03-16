@@ -27,9 +27,7 @@ class Personnage //: public sf::Drawable{
 
 
     public:
-      Personnage(mVieMax, mPosition, mCoutEnOr, mCoutEnBois, mCoutEnNourriture, mCoutEnPierre, mPortee ); // Il faut pouvoir passer des arguments! (les couts, la portee, etc)
-                    // Sinon la classe fille pourra pas modifier les modifier
-      void variationDeVie();
+      Personnage( int VieMax,int Position,int CoutEnOr,int CoutEnBois,int CoutEnNourriture,int CoutEnPierre,int Portee );
       void dessiner(sf::Vector2f position); // Utiliser le virtual void draw de sf::Drawable!
       void definirCible();  // A renommer definirCible(); et peut être lui passer en argument des coords?
       void definirennemi(); // ouaais?
