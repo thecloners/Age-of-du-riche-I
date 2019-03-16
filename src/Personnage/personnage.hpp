@@ -6,7 +6,7 @@ using namespace std;
 #ifndef PERSONNAGE
 #define PERSONNAGE
 
-class Personnage //: public sf::Drawable{
+class Personnage : public sf::Drawable
 {
 
     private:
@@ -21,14 +21,21 @@ class Personnage //: public sf::Drawable{
       int mCoutEnNourriture;
       int mCoutEnBois;
       int mCoutEnPierre;
-      //virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
+      virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
       // Pourquoi vous avez commenté ça?
 
 
 
     public:
-      Personnage( int VieMax,int Position,int CoutEnOr,int CoutEnBois,int CoutEnNourriture,int CoutEnPierre,int Portee );
-      void dessiner(sf::Vector2f position); // Utiliser le virtual void draw de sf::Drawable!
+      Personnage(
+          int VieMax,
+          int Position,
+          int CoutEnOr,
+          int CoutEnBois,
+          int CoutEnNourriture,
+          int CoutEnPierre,
+          int Portee
+      );
       void definirCible();  // A renommer definirCible(); et peut être lui passer en argument des coords?
       void definirennemi(); // ouaais?
       void peutattaquercible(); // peutAttaquerCible(). Je vois pas trop à quoi ça sert mais vous devez savoir

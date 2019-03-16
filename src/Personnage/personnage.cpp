@@ -4,7 +4,15 @@
 #include "personnage.hpp"
 using namespace std;
 
-Personnage::Personnage()
+Personnage::Personnage(
+      int VieMax,
+      int Position,
+      int CoutEnOr,
+      int CoutEnBois,
+      int CoutEnNourriture,
+      int CoutEnPierre,
+      int Portee
+    )
 {
       mVie = 100;
       mVieMax = 100;

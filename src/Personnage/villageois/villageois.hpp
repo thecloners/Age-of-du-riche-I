@@ -8,7 +8,7 @@
 
 #include <string>
 
-#include "personnage.hpp"
+#include "../personnage.hpp"
 
 
 
