@@ -3,9 +3,10 @@
 
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
+    sf::RenderWindow window(sf::VideoMode(1000, 1000), "Age Of Du Pauvre v0.01");
     //sf::CircleShape shape(100.f);
     //shape.setFillColor(sf::Color::Green);
+    Personnage perso;
 
     while (window.isOpen())
     {
@@ -15,8 +16,9 @@ int main()
             if (event.type == sf::Event::Closed)
                 window.close();
         }
-        Personnage test;
-        Personnage getporte();
+        window.draw(perso); // Appelle la fonction draw de Personnage
+        perso.getporte();   // Appelle getporte
+        // Personnage getporte(); // Mauvaise syntaxe!!, c'est perso.getporte();
     }
 
     return 0;
