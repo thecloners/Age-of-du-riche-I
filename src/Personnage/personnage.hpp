@@ -16,8 +16,8 @@ class Personnage //: public sf::Drawable{
       sf::Vector2f mPosition;
       int mDegat;
       int mPortee; // Parfait
-      sf::Vector2f mCible; // A renommer mCible
-      int mCoutEnOr; // Super les gars! Juste c'est pas coup mais cout haha
+      sf::Vector2f mCible;
+      int mCoutEnOr; 
       int mCoutEnNourriture;
       int mCoutEnBois;
       int mCoutEnPierre;
