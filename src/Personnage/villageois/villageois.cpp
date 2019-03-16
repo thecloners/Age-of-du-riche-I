@@ -1,14 +1,11 @@
-#include "personnage.hpp" // Mauvais header! 
 #include "villageois.hpp" // Bon header! (c'est moi qui l'ai ajouté)
- 
+
 
 using namespace std;
 
 
 // RHAA!! Pas BEAU!!!
 // Tu veux construire Villageois, pas Personnage!!
-Personnage::Villageois() // Mauvais! 
-Villageois::Villageois() // Valide!
 Villageois::Villageois() : Personnage(vieMax, Degat, Portee) // Encore plus valide, la on construit l'objet mère
 {
       mVie = 25;              // Bien tenté, mais non.
