@@ -1,12 +1,10 @@
-#include "Personnage/personnage.hpp"
-#include "Personnage/personnage.cpp"
+#include "Personnage/villageois/villageois.hpp"
 
 int main()
 {
     sf::RenderWindow window(sf::VideoMode(1000, 1000), "Age Of Du Pauvre v0.01");
-    //sf::CircleShape shape(100.f);
-    //shape.setFillColor(sf::Color::Green);
-    Personnage perso;
+
+    Villageois personnage();
 
     while (window.isOpen())
     {
@@ -16,9 +14,7 @@ int main()
             if (event.type == sf::Event::Closed)
                 window.close();
         }
-        window.draw(perso); // Appelle la fonction draw de Personnage
-        perso.getporte();   // Appelle getporte
-        // Personnage getporte(); // Mauvaise syntaxe!!, c'est perso.getporte();
+        window.draw(personnage()); // Appelle la fonction draw de Personnage
     }
 
     return 0;

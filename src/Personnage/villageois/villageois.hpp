@@ -8,11 +8,11 @@
 
 #include <string>
 
-#include "personnage.hpp"
+#include "../personnage.hpp"
 
 
 
-class villageois : public Personnage
+class Villageois : public Personnage
 
 
 {

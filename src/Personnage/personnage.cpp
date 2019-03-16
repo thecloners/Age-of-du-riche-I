@@ -4,7 +4,15 @@
 #include "personnage.hpp"
 using namespace std;
 
-Personnage::Personnage()
+Personnage::Personnage(
+      int VieMax,
+      int Position,
+      int CoutEnOr,
+      int CoutEnBois,
+      int CoutEnNourriture,
+      int CoutEnPierre,
+      int Portee
+    )
 {
       mVie = 100;
       mVieMax = 100;
@@ -20,20 +28,18 @@ Personnage::Personnage()
 void Personnage::getporte() {
       std::cout << mPortee << std::endl;
 }
- //void Personnage::draw(sf::RenderTarget& target, sf::RenderStates states) const {
-  // sf::Texture texture;
- //  if(Corps=="terre") {
-  //   if (!texture.loadFromFile("earth1.png"))
-  //   {
-  //      erreur...
-  //   }
- //  }
+ void Personnage::draw(sf::RenderTarget& target, sf::RenderStates states) const {
+  sf::Texture texture;
+  // if (!texture.loadFromFile("earth1.png"))
+  // {
 
-    // sf::CircleShape le_corps(10);
-    // le_corps.setTexture(&texture);
-    // le_corps.setPosition(mPosition);
-     //le_corps.setOutlineThickness(10.f);
-     //le_corps.setOutlineColor(sf::Color(49, 140, 231));
+   //}
 
-    // target.draw(le_corps);
- //}
+     sf::CircleShape personnage(10);
+     personnage.setFillColor(sf::Color(100, 250, 50));
+     personnage.setPosition(mPosition);
+     personnage.setOutlineThickness(10.f);
+     personnage.setOutlineColor(sf::Color(49, 140, 231));
+
+     target.draw(personnage);
+ }
