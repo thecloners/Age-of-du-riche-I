@@ -2,9 +2,11 @@
 #define PART_
 
 #include <iostream>
-#define TAILLE_PLATEAU
+#include <SFML/Graphics.hpp>
 
-class Partie
+// On hérite de la classe Drawable qui nous permet de nous faire dessiner
+
+class Partie : public sf::Drawable
 {
     private :
 

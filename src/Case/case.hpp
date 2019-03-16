@@ -2,23 +2,15 @@
 #define CASE_
 #include <iostream>
 
-case_t
 
 class Case
 {
 private:
-    int taille;
-    bool passer_ou_pas_passer;
-
+    bool mpasser_ou_pas_passer;
+    int mcouleur;
 public:
-    Case(case_t typeCase,unsigned int x,unsigned int y);
-typedef enum {mer, foret, plaine, roche} case_t;
+    typedef enum {mer, foret, plaine, roche} case_t;
+    Case(case_t typeCase);
+};
 
-}
-void genereMap()
-{
-Case mCases[TAILLE_PLATEAU][TAILLE_PLATEAU]
-
-
-
-}
+#endif
