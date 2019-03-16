@@ -1,5 +1,6 @@
 #include "partie.hpp"
 
+#define TAILLE_FENETRE 1000
 // Le constructeur, (entre autre faut qu'il appelle genereMap)
 Partie::Partie()
 {
@@ -14,6 +15,11 @@ void Partie::draw(sf::RenderTarget &target, sf::RenderStates states) const
     for (i = 0; i < mTaillePlateau; i++)
         for (j = 0; j < mTaillePlateau; j++)
         {
+            if (mMap[i][j].mTypeCase == mer)
+            {
+                sf::RectangleShape case_d(sf::Vector2f(TAILLE_FENETRE/TAILLE_PLATEAU, TAILLE_FENETRE/TAILLE_PLATEAU));
+                case_d.setFillColor(sf::Color(0, 0, 250));
+            }
         }
 }
 
@@ -42,15 +48,15 @@ void Partie::genereMap()
             }
             if (x == 2)
             {
-                mMap[i][j] = Case::plaine;
+                mMap[i][j] = plaine;
             }
             if (x == 3)
             {
-                Partie::mMap[i][j] = Case::roche;
+                Partie::mMap[i][j] = roche;
             }
             if (x == 4)
             {
-                Partie::mMap[i][j] = Case::foret;
+                Partie::mMap[i][j] = foret;
             }
         }
     }
