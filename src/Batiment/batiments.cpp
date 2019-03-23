@@ -4,14 +4,14 @@
 #include "batiments.hpp"
 
 
-Batiment::Batiment (bat_t nom, sf::Vector2f Position)
+Batiment::Batiment (bat_t TypeBat, sf::Vector2f Position)
 {
     mPosition = Position;
 }
 
 Batiment::~Batiment()
 {
-    
+
 }
 void Batiment::recevoirDegats(int degats)
 {
