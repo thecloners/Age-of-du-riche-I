@@ -8,6 +8,7 @@ using namespace std;
 
 class Personnage //: public sf::Drawable
 {
+    Personnage();
     Personnage(int Vie);
     private:
       sf::Vector2f mCible;
