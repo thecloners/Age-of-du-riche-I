@@ -36,13 +36,16 @@ class Personnage : public sf::Drawable
           int CoutEnPierre,
           int Portee
       );
-      void definirCible();
-      void definirennemi();
-      void peutattaquercible();
-      void mouvement();
-      void attaque();
-      void getporte();
-      void evoluer();
+    //  void definirCible();
+    //  void definirennemi();
+    //  void peutattaquercible();
+      void mouvement();        
+    //  void attaque();
+    //  void getporte();
+    //  void evoluer();
+
+
+
 
 };
 #endif
