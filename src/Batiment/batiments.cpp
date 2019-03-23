@@ -17,6 +17,13 @@ void Batiment::recevoirDegats(int degats)
 {
   mPV -= degats;
 }
+void Batiment::autoRegen ()
+    {
+sf::Time timeBat = sf::milliseconds(1000);
+
+    }
+
+
 
 // Alors cette fonction la permet de faire un window.draw(batiment)
 // RenderTarget représente la window

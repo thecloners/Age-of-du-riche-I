@@ -25,6 +25,8 @@ class Batiment : public sf::Drawable // La on hérite de Drawable pour pouvoir s
 
     typedef enum {maison, moulin, chateau} bat_t;
     void recevoirDegats(int degats);    // Pas mal
+    void autoRegen ();
     Batiment(bat_t nom, sf::Vector2f Position); // Juste faut définir bat_t
+
 };
 #endif
