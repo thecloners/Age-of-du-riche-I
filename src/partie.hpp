@@ -4,13 +4,13 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 
+
 // On hérite de la classe Drawable qui nous permet de nous faire dessiner
 #define TAILLE_PLATEAU 100
 class Partie : public sf::Drawable
 {
   private:
     int mNbJoueur;
-    const int mTaillePlateau = 100;
     void genereMap();
     Case mMap[TAILLE_PLATEAU][TAILLE_PLATEAU];
 

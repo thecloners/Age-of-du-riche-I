@@ -3,14 +3,15 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 
+typedef enum {mer, foret, plaine, roche} case_t;
 
 class Case
 {
 private:
     bool mpasser_ou_pas_passer;
-    sf::Color mcouleur;
 public:
-    typedef enum {mer, foret, plaine, roche} case_t;
+    sf::Color mCouleur;
+    Case() {}
     Case(case_t typeCase);
     case_t mTypeCase;
 };
