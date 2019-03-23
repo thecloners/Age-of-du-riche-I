@@ -13,10 +13,10 @@ Batiment::Batiment (bat_t TypeBat, sf::Vector2f Position)
     {
         case maison:
             mPV = 500;
-            case moulin:
-                mPV = 250;
-                case chateau:
-                    mPV = 1500;
+        case moulin:
+            mPV = 250;
+        case chateau:
+            mPV = 1500;
     }
 }
 
