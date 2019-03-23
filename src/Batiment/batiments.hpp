@@ -1,7 +1,7 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 #include <string>
-using namespace std;
+
 
 #ifndef BATIMENTS
 #define BATIMENTS
@@ -13,7 +13,7 @@ class Batiment : public sf::Drawable // La on hérite de Drawable pour pouvoir s
   private:
     int mPV;     // Les conventions de nommage! C'est mPV pas pv
     int mTAILLE; // Pareil pour taille
-    sf::Vector2f position;
+    sf::Vector2f mPosition;
 
   public:
     // Alors cette fonction la permet de faire un window.draw(batiment)
@@ -24,6 +24,6 @@ class Batiment : public sf::Drawable // La on hérite de Drawable pour pouvoir s
 
     typedef enum {maison, moulin, chateau} bat_t;
     void recevoirDegats(int degats);    // Pas mal
-    Batiment(bat_t nom, int x, int y); // Juste faut définir bat_t
+    Batiment(bat_t nom, sf::Vector2f Position); // Juste faut définir bat_t
 };
 #endif
