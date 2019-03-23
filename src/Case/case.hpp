@@ -8,7 +8,7 @@ class Case
 {
 private:
     bool mpasser_ou_pas_passer;
-    sf::Color mcouleur;
+    sf::Color mCouleur;
 public:
     typedef enum {mer, foret, plaine, roche} case_t;
     Case(case_t typeCase);
