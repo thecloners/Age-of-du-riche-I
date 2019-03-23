@@ -24,7 +24,7 @@ private:
     int Degat;
     int Portee;
     int Vie;
-    sf:: Vector2f();
+  //  sf:: Vector2f();
 
 };
 

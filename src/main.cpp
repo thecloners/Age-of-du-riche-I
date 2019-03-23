@@ -14,7 +14,10 @@ int main()
             if (event.type == sf::Event::Closed)
                 window.close();
         }
-        window.draw(michel); // Appelle la fonction draw de Personnage
+        window.clear(sf::Color::Black);
+
+        //window.draw(michel); // Appelle la fonction draw de Personnage
+       window.display();
     }
 
     return 0;
