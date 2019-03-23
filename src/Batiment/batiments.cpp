@@ -20,7 +20,7 @@ void Batiment::recevoirDegats(int degats)
 void Batiment::autoRegen ()
     {
 sf::Time timeBat = sf::milliseconds(1000);
-
+    if mPv 
     }
 
 
