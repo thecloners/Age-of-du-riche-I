@@ -4,40 +4,38 @@
 #include "personnage.hpp"
 using namespace std;
 
-//Personnage::Personnage(
-//      int VieMax,
-//      int Position,
-//      int CoutEnOr,
-//      int CoutEnBois,
-//      int CoutEnNourriture,
-//      int CoutEnPierre,
-//      int Portee
-//    )
-//{
-//      mVie = 100;
-//      mVieMax = 100;
-//      mCible = {100,100};
-//      mPortee = 100;
-//      mPosition = {100, 100};
-//      mCoutEnOr = 1;
-//      mCoutEnBois = 1;
-//      mCoutEnPierre = 1;
-//      mCoutEnNourriture = 1;
-//}
+Personnage::Personnage()
+{
+     mVie = 100;
+     mVieMax = 100;
+     mCible = {100,100};
+     mPortee = 100;
+     mPosition = {100, 100};
+     mCoutEnOr = 1;
+     mCoutEnBois = 1;
+     mCoutEnPierre = 1;
+     mCoutEnNourriture = 1;
+     mDegat = 1;
+}
+
+Personnage::Personnage(int Vie) : m_vie(Vie), m_VieMAx(Vie){
+  
 
 }
- void Personnage::draw(sf::RenderTarget& target, sf::RenderStates states) const {
-  sf::Texture texture;
+
+//}
+ //void Personnage::draw(sf::RenderTarget& target, sf::RenderStates states) const {
+//  sf::Texture texture;
   // if (!texture.loadFromFile("earth1.png"))
   // {
 
    //}
 
-     sf::CircleShape personnage(10);
-     personnage.setFillColor(sf::Color(100, 250, 50));
-     personnage.setPosition(mPosition);
-     personnage.setOutlineThickness(10.f);
-     personnage.setOutlineColor(sf::Color(49, 140, 231));
+  //   sf::CircleShape personnage(10);
+    // personnage.setFillColor(sf::Color(100, 250, 50));
+     //personnage.setPosition(mPosition);
+     //personnage.setOutlineThickness(10.f);
+    // personnage.setOutlineColor(sf::Color(49, 140, 231));
 
-     target.draw(personnage);
- }
+  //   target.draw(personnage);
+ //}

@@ -1,10 +1,10 @@
-#include "Personnage/personnage.cpp"
+#include "Personnage/personnage.hpp"
 
 int main()
 {
     sf::RenderWindow window(sf::VideoMode(1000, 1000), "Age Of Du Pauvre v0.01");
 
-    Personnage michel;
+    Personnage michel(25);
 
     while (window.isOpen())
     {
