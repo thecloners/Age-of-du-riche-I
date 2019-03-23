@@ -8,12 +8,9 @@ using namespace std;
 
 class Personnage //: public sf::Drawable
 {
-<<<<<<< HEAD
+
     Personnage(int Vie, int Degat, int Portee, int CoutEnOr, int CoutEnNourriture, int CoutEnBois, int CoutEnPierre);
-=======
     Personnage();
-    Personnage(int Vie);
->>>>>>> eef1dd14c7202c05a1ac64cff5742bd57aaabc49
     private:
       sf::Vector2f mCible;
       sf::Vector2f mPosition; // Ouais, pas mal. On attaque donc juste sur une position
