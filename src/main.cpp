@@ -4,7 +4,7 @@ int main()
 {
     sf::RenderWindow window(sf::VideoMode(1000, 1000), "Age Of Du Pauvre v0.01");
 
-    Villageois personnage();
+    Villageois personnage;
 
     while (window.isOpen())
     {
@@ -14,7 +14,7 @@ int main()
             if (event.type == sf::Event::Closed)
                 window.close();
         }
-        window.draw(personnage()); // Appelle la fonction draw de Personnage
+        window.draw(personnage; // Appelle la fonction draw de Personnage
     }
 
     return 0;

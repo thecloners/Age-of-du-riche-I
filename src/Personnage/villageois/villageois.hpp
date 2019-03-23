@@ -19,7 +19,12 @@ class Villageois : public Personnage
 public:
     void recolteressource()const;
     void construirebatiments()const;
-
+private:
+    int VieMax;
+    int Degat;
+    int Portee;
+    int Vie;
+    sf::Vector2f;
 
 };
 

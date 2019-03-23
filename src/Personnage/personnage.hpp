@@ -36,16 +36,13 @@ class Personnage : public sf::Drawable
           int CoutEnPierre,
           int Portee
       );
-      void definirCible();  // A renommer definirCible(); et peut être lui passer en argument des coords?
-      void definirennemi(); // ouaais?
-      void peutattaquercible(); // peutAttaquerCible(). Je vois pas trop à quoi ça sert mais vous devez savoir
-      void mouvement();         // mmhh??
-      void attaque();           // mmhhhhhh???
-      void getporte();          // mmhmmmmhmhhh???
-      void evoluer();           // WTF?!
-
-
-
+      void definirCible();
+      void definirennemi();
+      void peutattaquercible();
+      void mouvement();
+      void attaque();
+      void getporte();
+      void evoluer();
 
 };
 #endif
