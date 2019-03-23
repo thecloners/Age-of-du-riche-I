@@ -20,6 +20,21 @@ void Partie::draw(sf::RenderTarget &target, sf::RenderStates states) const
                 sf::RectangleShape case_d(sf::Vector2f(TAILLE_FENETRE/TAILLE_PLATEAU, TAILLE_FENETRE/TAILLE_PLATEAU));
                 case_d.setFillColor(sf::Color(0, 0, 250));
             }
+            else if (mMap[i][j].mTypeCase == plaine)
+                {
+                    sf::RectangleShape case_d(sf::Vector2f(TAILLE_FENETRE/TAILLE_PLATEAU, TAILLE_FENETRE/TAILLE_PLATEAU));
+                    case_d.setFillColor(sf::Color(0, 250, 0));
+                }
+                else if (mMap[i][j].mTypeCase == foret)
+                    {
+                        sf::RectangleShape case_d(sf::Vector2f(TAILLE_FENETRE/TAILLE_PLATEAU, TAILLE_FENETRE/TAILLE_PLATEAU));
+                        case_d.setFillColor(sf::Color(100, 250, 100));
+                    }
+                    else if (mMap[i][j].mTypeCase == roche)
+                        {
+                            sf::RectangleShape case_d(sf::Vector2f(TAILLE_FENETRE/TAILLE_PLATEAU, TAILLE_FENETRE/TAILLE_PLATEAU));
+                            case_d.setFillColor(sf::Color(10, 10, 10));
+                        }
         }
 }
 
@@ -27,6 +42,9 @@ void Partie::draw(sf::RenderTarget &target, sf::RenderStates states) const
 // Qui prennent du temps (e.g : flèches, personnages qui marchent, etc)
 void Partie::update()
 {
+
+
+
 }
 
 // Cette fonction récupère les évènements du clavier
