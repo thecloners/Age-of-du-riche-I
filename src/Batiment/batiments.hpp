@@ -6,6 +6,8 @@
 #ifndef BATIMENTS
 #define BATIMENTS
 
+typedef enum {maison, moulin, chateau} bat_t;
+
 // La classe représente UN batiment, doncn pas Batiments mais Batiment!!!
 class Batiment : public sf::Drawable // La on hérite de Drawable pour pouvoir se faire dessienr. Valide!
 
@@ -23,7 +25,6 @@ class Batiment : public sf::Drawable // La on hérite de Drawable pour pouvoir s
     // Vous faites RenderTarget.draw(tiboInShape);
     virtual void draw(sf::RenderTarget &target, sf::RenderStates states) const;
 
-    typedef enum {maison, moulin, chateau} bat_t;
     void recevoirDegats(int degats);    // Pas mal
     void autoRegen ();
     Batiment(bat_t nom, sf::Vector2f Position); // Juste faut définir bat_t
