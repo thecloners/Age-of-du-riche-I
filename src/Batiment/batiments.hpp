@@ -14,6 +14,7 @@ class Batiment : public sf::Drawable // La on hérite de Drawable pour pouvoir s
     int mPV;     // Les conventions de nommage! C'est mPV pas pv
     int mTAILLE; // Pareil pour taille
     sf::Vector2f mPosition;
+    bat_t mTypeBat;
 
   public:
     // Alors cette fonction la permet de faire un window.draw(batiment)
