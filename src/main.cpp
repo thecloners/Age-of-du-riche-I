@@ -7,6 +7,7 @@ int main()
     sf::RenderWindow window(sf::VideoMode(1000, 1000), "Age Of Du Pauvre v0.01");
 
     Villageois michel(sf::Vector2f(250, 250));
+    Villageois jean(sf::Vector2f(550, 250));
 
     while (window.isOpen())
     {
@@ -18,7 +19,8 @@ int main()
         }
         window.clear(sf::Color::Black);
 
-        window.draw(michel); // Appelle la fonction draw de Personnage
+        window.draw(michel);
+        window.draw(jean);
        window.display();
     }
 
