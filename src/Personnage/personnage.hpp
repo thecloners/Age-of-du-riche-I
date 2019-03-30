@@ -21,7 +21,7 @@ class Personnage : public sf::Drawable
       int mCoutEnNourriture;
       int mCoutEnBois;
       int mCoutEnPierre;
-      virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
+
       // Pourquoi vous avez commenté ça?
 
 
@@ -37,7 +37,7 @@ class Personnage : public sf::Drawable
       //    int CoutEnPierre,
       //    int Portee
       //);
-    //  void definirCible();
+     sf::Vector2f getPosition() const;
     //  void definirennemi();
     //  void peutattaquercible();
     //  void mouvement();

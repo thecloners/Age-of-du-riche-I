@@ -1,10 +1,12 @@
 #include "Personnage/personnage.hpp"
+#include "Personnage/villageois.hpp"
+
 
 int main()
 {
     sf::RenderWindow window(sf::VideoMode(1000, 1000), "Age Of Du Pauvre v0.01");
 
-    Personnage michel(25,10,4,0,1,1,1,sf::Vector2f(250, 250));
+    Villageois michel(sf::Vector2f(250, 250));
 
     while (window.isOpen())
     {
