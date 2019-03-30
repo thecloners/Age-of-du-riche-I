@@ -13,7 +13,6 @@ class Partie : public sf::Drawable
     int mNbJoueur;
     void genereMap();
     Case mMap[TAILLE_PLATEAU][TAILLE_PLATEAU];
-
     virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
     // Fonction qui est appellée quand on fait window.draw(partie)
     // En gros, RenderTarget s'utilise comme window.
