@@ -13,8 +13,8 @@ class Batiment : public sf::Drawable // La on hérite de Drawable pour pouvoir s
 
 {
   private:
-    int mPV;     // Les conventions de nommage! C'est mPV pas pv
-    int mTAILLE; // Pareil pour taille
+    int mPV;
+    int mTAILLE;
     sf::Vector2f mPosition;
     bat_t mTypeBat;
 
@@ -26,9 +26,9 @@ class Batiment : public sf::Drawable // La on hérite de Drawable pour pouvoir s
     // Vous faites RenderTarget.draw(tiboInShape);
     virtual void draw(sf::RenderTarget &target, sf::RenderStates states) const;
 
-    void recevoirDegats(int degats);    // Pas mal
+    void recevoirDegats(int degats);   
     void autoRegen ();
-     // Juste faut définir bat_t
+
 
 };
 #endif
