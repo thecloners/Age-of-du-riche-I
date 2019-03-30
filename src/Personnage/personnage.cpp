@@ -18,11 +18,7 @@ Personnage::Personnage()
      mDegat = 1;
 }
 
-<<<<<<< HEAD
-Personnage::Personnage(int vie, int degat, int Portee, int CoutEnOr,int CoutEnNourriture, int CoutEnBois, int CoutEnPierre) : m_vie(Vie), m_VieMAx(Vie), mDegat(Degat), mPortee(Portee), mCoutEnOr(CoutEnOr), mCoutEnNourriture(CoutEnNourriture), mCoutEnBois(CoutEnBois), mCoutEnPierre(CoutEnPierre){
-=======
 Personnage::Personnage(int Vie, int Degat, int Portee, int CoutEnOr,int CoutEnNourriture, int CoutEnBois, int CoutEnPierre) : mVie(Vie), mVieMax(Vie), mDegat(Degat), mPortee(Portee), mCoutEnOr(CoutEnOr), mCoutEnNourriture(CoutEnNourriture), mCoutEnBois(CoutEnBois), mCoutEnPierre(CoutEnPierre){
->>>>>>> 3176e70326ab961e6e2c428040e6760087c399e7
 
 
 }
