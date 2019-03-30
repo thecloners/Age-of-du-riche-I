@@ -27,7 +27,7 @@ class Personnage : public sf::Drawable
 
 
     public:
-          Personnage(int Vie, int Degat, int Portee, int CoutEnOr, int CoutEnNourriture, int CoutEnBois, int CoutEnPierre);
+          Personnage(int Vie, int Degat, int Portee, int CoutEnOr, int CoutEnNourriture, int CoutEnBois, int CoutEnPierre, sf::Vector2f Position);
       //Personnage(
       //    int VieMax,
       //    int Position,

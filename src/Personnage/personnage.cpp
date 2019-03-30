@@ -4,7 +4,7 @@
 #include "personnage.hpp"
 using namespace std;
 
-Personnage::Personnage(int Vie, int Degat, int Portee, int CoutEnOr,int CoutEnNourriture, int CoutEnBois, int CoutEnPierre) : mVie(Vie), mVieMax(Vie), mDegat(Degat), mPortee(Portee), mCoutEnOr(CoutEnOr), mCoutEnNourriture(CoutEnNourriture), mCoutEnBois(CoutEnBois), mCoutEnPierre(CoutEnPierre){
+Personnage::Personnage(int Vie, int Degat, int Portee, int CoutEnOr,int CoutEnNourriture, int CoutEnBois, int CoutEnPierre, sf::Vector2f Position) : mVie(Vie), mVieMax(Vie), mDegat(Degat), mPortee(Portee), mCoutEnOr(CoutEnOr), mCoutEnNourriture(CoutEnNourriture), mCoutEnBois(CoutEnBois), mCoutEnPierre(CoutEnPierre), mPosition( Position){
 
 
 }
