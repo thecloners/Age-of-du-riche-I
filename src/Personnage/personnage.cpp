@@ -16,7 +16,7 @@ Personnage::Personnage()
      mCoutEnPierre = 1;
      mCoutEnNourriture = 1;
      mDegat = 1;
-}
+
 
 Personnage::Personnage(int Vie, int Degat, int Portee, int CoutEnOr,int CoutEnNourriture, int CoutEnBois, int CoutEnPierre) : mVie(Vie), mVieMax(Vie), mDegat(Degat), mPortee(Portee), mCoutEnOr(CoutEnOr), mCoutEnNourriture(CoutEnNourriture), mCoutEnBois(CoutEnBois), mCoutEnPierre(CoutEnPierre){
 
