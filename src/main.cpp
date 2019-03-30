@@ -21,6 +21,7 @@ int main()
         window.draw(partie);
         window.display();
     }
-    sf::Time Temps;
+    sf::Time GeneralTime;
+
     return 0;
 }
