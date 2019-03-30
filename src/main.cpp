@@ -4,7 +4,9 @@
 int main()
 {
     sf::RenderWindow window(sf::VideoMode(1000, 1000), "Age Of Du Riche v 0.01");
-    Batiment bat7(maison,50,50);
+     // pas correct, Batiment() prends comme argument un sf::Vector2f. Pas deux floats
+    // Batiment bat7(maison,50,50);
+    Batiment bat7(maison, sf::Vector2f(50, 50)); // correct
     while (window.isOpen())
     {
 
