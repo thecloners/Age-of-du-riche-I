@@ -8,9 +8,6 @@ using namespace std;
 
 class Personnage //: public sf::Drawable
 {
-
-    Personnage(int Vie, int Degat, int Portee, int CoutEnOr, int CoutEnNourriture, int CoutEnBois, int CoutEnPierre);
-    Personnage();
     private:
       sf::Vector2f mCible;
       sf::Vector2f mPosition; // Ouais, pas mal. On attaque donc juste sur une position
@@ -31,6 +28,7 @@ class Personnage //: public sf::Drawable
 
 
     public:
+          Personnage(int Vie, int Degat, int Portee, int CoutEnOr, int CoutEnNourriture, int CoutEnBois, int CoutEnPierre);
       //Personnage(
       //    int VieMax,
       //    int Position,

@@ -1,11 +1,11 @@
 CC=g++
 CFLAGS= -Wall -ansi -pedantic -g3 -O0 -c -std=c++11
 LDFLAGS= -lsfml-graphics -lsfml-window -lsfml-system  -lsfml-network
-EXEC=ageofduriche 
+EXEC=ageofduriche
 SRCDIR=src
 ODIR=obj
 INCLUDEDIR=include
-SRC= $(wildcard $(SRCDIR)/*.cpp)
+SRC= $(wildcard $(SRCDIR)/*.cpp) $(wildcard $(SRCDIR)*/*/*.cpp)
 OBJ= $(subst $(SRCDIR),$(ODIR),$(SRC:.cpp=.o))
 
 
