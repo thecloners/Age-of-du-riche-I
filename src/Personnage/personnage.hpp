@@ -6,7 +6,7 @@ using namespace std;
 #ifndef PERSONNAGE
 #define PERSONNAGE
 
-class Personnage //: public sf::Drawable
+class Personnage ://: public sf::Drawable
 {
     private:
       sf::Vector2f mCible;
