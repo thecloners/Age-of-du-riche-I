@@ -16,7 +16,7 @@ int main()
         }
         window.clear(sf::Color::Black);
 
-        //window.draw(michel); // Appelle la fonction draw de Personnage
+        window.draw(michel); // Appelle la fonction draw de Personnage
        window.display();
     }
 

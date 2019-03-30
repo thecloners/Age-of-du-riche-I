@@ -1,12 +1,11 @@
+#ifndef PERSONNAGE
+#define PERSONNAGE
+
 #include <iostream>
 #include <SFML/Graphics.hpp>
 #include <string>
 using namespace std;
-
-#ifndef PERSONNAGE
-#define PERSONNAGE
-
-class Personnage ://: public sf::Drawable
+class Personnage : public sf::Drawable
 {
     private:
       sf::Vector2f mCible;
@@ -22,7 +21,7 @@ class Personnage ://: public sf::Drawable
       int mCoutEnNourriture;
       int mCoutEnBois;
       int mCoutEnPierre;
-      //virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
+      virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
       // Pourquoi vous avez commenté ça?
 
 
