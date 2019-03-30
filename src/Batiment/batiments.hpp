@@ -19,6 +19,7 @@ class Batiment : public sf::Drawable // La on hérite de Drawable pour pouvoir s
     bat_t mTypeBat;
 
   public:
+    Batiment(bat_t nom, sf::Vector2f Position);
     // Alors cette fonction la permet de faire un window.draw(batiment)
     // RenderTarget représente la window
     // Donc si vous avez un RectangleShape à dessiner,
@@ -27,7 +28,7 @@ class Batiment : public sf::Drawable // La on hérite de Drawable pour pouvoir s
 
     void recevoirDegats(int degats);    // Pas mal
     void autoRegen ();
-    Batiment(bat_t nom, sf::Vector2f Position); // Juste faut définir bat_t
+     // Juste faut définir bat_t
 
 };
 #endif
