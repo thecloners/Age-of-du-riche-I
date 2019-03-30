@@ -1,18 +1,24 @@
 #include "hitbox.hpp"
 
-Hitbox::Hitbox(hitbox_t typeHitbox)
+Hitbox::Hitbox(sf::Vector2f p1,sf::Vector2f p2,sf::Vector2f p3,sf::Vector2f p4)
 {
-
-    if (typeHitbox == quadrilatere) {
-        Hitbox::arrete1 = p1;
-        Hitbox::arrete2 = p2;
-        Hitbox::arrete3 = p3;
-        Hitbox::arrete4 = p4;
-    }
-
+    mArrete1 = p1;
+    mArrete2 = p2;
+    mArrete3 = p3;
+    mArrete4 = p4;
 }
 
-int Hitbox::collision()
+Hitbox::Hitbox(sf::Vector2f p, sf::Vector2f taille)
+{
+    mArrete1 = p;
+    mArrete2.x = p.x + taille.x;
+    mArrete2.y = p.y;
+    mArrete3 = p + taille;
+    mArrete4.x = p.x;
+    mArrete4.y = p.y + taille.y;
+}
+
+/*int Hitbox::collision()
 {
 
-}
+}*/
