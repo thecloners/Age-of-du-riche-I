@@ -22,6 +22,7 @@ class Personnage : public sf::Drawable
       int mCoutEnBois;
       int mCoutEnPierre;
 
+
       // Pourquoi vous avez commenté ça?
 
 
