@@ -2,7 +2,11 @@
 #include <SFML/Graphics.hpp>
 #include <string>
 #include "batiments.hpp"
+<<<<<<< HEAD
 #include "hitbox.hpp"
+=======
+#include "../hitbox.hpp"
+>>>>>>> 7c681236f501de6b19e23b0d2bdc2ad2f87de69c
 
 Batiment::Batiment (bat_t TypeBat, sf::Vector2f Position)
 {

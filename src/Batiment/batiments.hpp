@@ -1,7 +1,7 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 #include <string>
-
+#include "../hitbox.hpp"
 
 #ifndef BATIMENTS
 #define BATIMENTS
