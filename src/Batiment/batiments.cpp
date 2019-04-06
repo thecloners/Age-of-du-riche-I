@@ -13,17 +13,40 @@ Batiment::Batiment (bat_t TypeBat, sf::Vector2f Position)
     {
         case maison:
             mPV = 500;
+            mColor = sf::Color::Green;
+            break;
         case moulin:
             mPV = 250;
+            mColor = sf::Color::Blue;
+            break;
         case chateau:
             mPV = 1500;
+            mColor = sf::Color::Red;;
+            break;
+        default:
+            mPV = 1;
+            mColor = sf::Color::Black;
+        break;
     }
+}
+
+Batiment::~Batiment(){
+
 }
 
 void Batiment::recevoirDegats(int degats)
 {
   mPV -= degats;
+  if(mPV<=0){
+     ~Batiment
+  }
 }
+
+void Batiment::returnPV()
+{
+std::cout << mPV << std::endl;
+}
+
 void Batiment::autoRegen ()
     {
 sf::Time timeBat = sf::milliseconds(1000);
@@ -37,8 +60,8 @@ sf::Time timeBat = sf::milliseconds(1000);
 void Batiment::draw(sf::RenderTarget &target, sf::RenderStates states) const
 {
     sf::CircleShape mTriangle(80.f, 3);
-    mTriangle.setFillColor(sf::Color(132, 46, 27));
-     mTriangle.setPosition(10.f, 50.f);
-     target.draw(mTriangle);
+    mTriangle.setFillColor(mColor);
+    mTriangle.setPosition(mPosition);
+    target.draw(mTriangle);
 
 }
