@@ -37,3 +37,11 @@ sf::Vector2f Personnage::getPosition() const
 Hitbox Personnage::getDefensiveHitbox(){
   return Hitbox(getPosition(), sf::Vector2f(10, 10));
 }
+
+Hitbox Personnage::getOffensiveHitbox(){
+  return Hitbox(getPosition(), sf::Vector2f(10, 10));
+}
+
+bool Personnage::getselection(){
+  return mselection;
+}

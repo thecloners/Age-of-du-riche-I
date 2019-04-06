@@ -23,6 +23,8 @@ class Personnage : public sf::Drawable
       int mCoutEnBois;
       int mCoutEnPierre;
 
+      bool mselection;
+
 
       // Pourquoi vous avez commenté ça?
 
@@ -31,6 +33,7 @@ class Personnage : public sf::Drawable
     public:
           Personnage(int Vie, int Degat, int Portee, int CoutEnOr, int CoutEnNourriture, int CoutEnBois, int CoutEnPierre, sf::Vector2f Position);
           Hitbox getDefensiveHitbox();
+          Hitbox getOffensiveHitbox();
       //Personnage(
       //    int VieMax,
       //    int Position,
@@ -40,7 +43,8 @@ class Personnage : public sf::Drawable
       //    int CoutEnPierre,
       //    int Portee
       //);
-         sf::Vector2f getPosition() const;
+        bool getselection();
+        sf::Vector2f getPosition() const;
     //  void definirennemi();
     //  void peutattaquercible();
     //  void mouvement();
