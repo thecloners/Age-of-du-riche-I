@@ -42,6 +42,10 @@ Hitbox Personnage::getOffensiveHitbox(){
   return Hitbox(getPosition(), sf::Vector2f(10, 10));
 }
 
-bool Personnage::getselection(){
+bool Personnage::getSelection(){
   return mselection;
+}
+bool Personnage::setSelection(bool selection){
+      mselection = selection;
+      return mselection;
 }
