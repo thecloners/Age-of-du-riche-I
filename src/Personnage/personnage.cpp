@@ -1,4 +1,4 @@
-#include <iostream>
+/*#include <iostream>
 #include <SFML/Graphics.hpp>
 #include <string>
 #include "personnage.hpp"
@@ -29,3 +29,4 @@ sf::Vector2f Personnage::getPosition() const
 {
   return mPosition;
 }
+*/
