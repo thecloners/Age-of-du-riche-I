@@ -2,6 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include <string>
 #include "personnage.hpp"
+#include "../hitbox.hpp"
 using namespace std;
 
 Personnage::Personnage(
@@ -25,7 +26,14 @@ Personnage::Personnage(
 }
 
 //}
+
+
 sf::Vector2f Personnage::getPosition() const
 {
   return mPosition;
+}
+
+
+Hitbox Personnage::getDefensiveHitbox(){
+  return Hitbox(getPosition(), sf::Vector2f(10, 10));
 }

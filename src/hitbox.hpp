@@ -16,6 +16,7 @@ class Hitbox : public sf::Drawable
       sf::Vector2f mArrete4;
       bool mAction;
   public:
+    virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 
 
     Hitbox(sf::Vector2f p1,sf::Vector2f p2,sf::Vector2f p3,sf::Vector2f p4);

@@ -21,6 +21,7 @@ $(ODIR)/%.o: $(SRCDIR)/%.cpp
 .PHONY: clean mrproper
 
 clean:
+	rm -rf $(ODIR)/*/*.o
 	rm -rf $(ODIR)/*.o
 
 mrproper: clean

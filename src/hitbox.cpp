@@ -18,6 +18,19 @@ Hitbox::Hitbox(sf::Vector2f p, sf::Vector2f taille)
     mArrete4.y = p.y + taille.y;
 }
 
+void Hitbox::draw(sf::RenderTarget& target, sf::RenderStates states) const {
+    sf::ConvexShape convex;
+
+    // définit le nombre de points (5)
+    convex.setPointCount(4);
+
+    // définit les points
+    convex.setPoint(0, mArrete1);
+    convex.setPoint(1, mArrete2);
+    convex.setPoint(2, mArrete3);
+    convex.setPoint(3, mArrete4);
+    target.draw(convex);
+}
 /*bool Hitbox::Collision()
 {
 
