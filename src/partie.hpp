@@ -1,7 +1,9 @@
 #ifndef PART_
 #define PART_
 #include "Case/case.hpp"
+#include "Personnage/personnage.hpp"
 #include <iostream>
+#include <vector>
 #include <SFML/Graphics.hpp>
 
 
@@ -14,6 +16,7 @@ class Partie : public sf::Drawable
     int mNbJoueur;
     void genereMap();
     Case mMap[TAILLE_PLATEAU][TAILLE_PLATEAU];
+    std::vector<Personnage> mPersonnages;
     virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
     // Fonction qui est appellée quand on fait window.draw(partie)
     // En gros, RenderTarget s'utilise comme window.

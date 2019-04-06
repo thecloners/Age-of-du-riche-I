@@ -1,5 +1,5 @@
 #include "partie.hpp"
-
+#include "Personnage/villageois.hpp"
 using namespace std;
 
 #define TAILLE_FENETRE 1000
@@ -7,6 +7,7 @@ using namespace std;
 Partie::Partie()
 {
     genereMap();
+    mPersonnages.push_back(Villageois(sf::Vector2f(50 ,50)))
 }
 
 // Fonction qui est appellée quand on fait window.draw(partie)
