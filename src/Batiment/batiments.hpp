@@ -20,13 +20,14 @@ class Batiment : public sf::Drawable // La on hérite de Drawable pour pouvoir s
 
   public:
     Batiment(bat_t nom, sf::Vector2f Position);
+    Batiment::~Batiment()
     // Alors cette fonction la permet de faire un window.draw(batiment)
     // RenderTarget représente la window
     // Donc si vous avez un RectangleShape à dessiner,
     // Vous faites RenderTarget.draw(tiboInShape);
     virtual void draw(sf::RenderTarget &target, sf::RenderStates states) const;
 
-    void recevoirDegats(int degats);   
+    void recevoirDegats(int degats);
     void autoRegen ();
 
 

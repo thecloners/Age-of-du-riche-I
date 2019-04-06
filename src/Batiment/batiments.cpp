@@ -20,9 +20,16 @@ Batiment::Batiment (bat_t TypeBat, sf::Vector2f Position)
     }
 }
 
+Batiment::~Batiment(){
+
+}
+
 void Batiment::recevoirDegats(int degats)
 {
   mPV -= degats;
+  if(mPV<=0){
+     ~Batiment
+  }
 }
 void Batiment::autoRegen ()
     {
@@ -38,7 +45,7 @@ void Batiment::draw(sf::RenderTarget &target, sf::RenderStates states) const
 {
     sf::CircleShape mTriangle(80.f, 3);
     mTriangle.setFillColor(sf::Color(132, 46, 27));
-     mTriangle.setPosition(10.f, 50.f);
+     mTriangle.setPosition(mPosition);
      target.draw(mTriangle);
 
 }
