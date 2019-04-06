@@ -7,6 +7,17 @@
 Batiment::Batiment (bat_t TypeBat, sf::Vector2f Position)
 {
     mPosition = Position;
+    mTypeBat = TypeBat;
+
+    switch(mTypeBat)
+    {
+        case maison:
+            mPV = 500;
+        case moulin:
+            mPV = 250;
+        case chateau:
+            mPV = 1500;
+    }
 }
 
 Batiment::~Batiment()
