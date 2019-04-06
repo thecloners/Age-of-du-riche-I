@@ -13,21 +13,22 @@ class Batiment : public sf::Drawable // La on hérite de Drawable pour pouvoir s
 
 {
   private:
-    int mPV;     // Les conventions de nommage! C'est mPV pas pv
-    int mTAILLE; // Pareil pour taille
+    int mPV;
+    int mTAILLE;
     sf::Vector2f mPosition;
     bat_t mTypeBat;
 
   public:
+    Batiment(bat_t nom, sf::Vector2f Position);
     // Alors cette fonction la permet de faire un window.draw(batiment)
     // RenderTarget représente la window
     // Donc si vous avez un RectangleShape à dessiner,
     // Vous faites RenderTarget.draw(tiboInShape);
     virtual void draw(sf::RenderTarget &target, sf::RenderStates states) const;
 
-    void recevoirDegats(int degats);    // Pas mal
+    void recevoirDegats(int degats);   
     void autoRegen ();
-    Batiment(bat_t nom, sf::Vector2f Position); // Juste faut définir bat_t
+
 
 };
 #endif

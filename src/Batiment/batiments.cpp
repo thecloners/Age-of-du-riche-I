@@ -20,10 +20,6 @@ Batiment::Batiment (bat_t TypeBat, sf::Vector2f Position)
     }
 }
 
-Batiment::~Batiment()
-{
-
-}
 void Batiment::recevoirDegats(int degats)
 {
   mPV -= degats;
@@ -31,10 +27,8 @@ void Batiment::recevoirDegats(int degats)
 void Batiment::autoRegen ()
     {
 sf::Time timeBat = sf::milliseconds(1000);
-    if mPv
+    //if mPv
     }
-
-
 
 // Alors cette fonction la permet de faire un window.draw(batiment)
 // RenderTarget représente la window
@@ -42,5 +36,9 @@ sf::Time timeBat = sf::milliseconds(1000);
 // Vous faites RenderTarget.draw(tiboInShape);
 void Batiment::draw(sf::RenderTarget &target, sf::RenderStates states) const
 {
-    target.draw();
+    sf::CircleShape mTriangle(80.f, 3);
+    mTriangle.setFillColor(sf::Color(132, 46, 27));
+     mTriangle.setPosition(10.f, 50.f);
+     target.draw(mTriangle);
+
 }
