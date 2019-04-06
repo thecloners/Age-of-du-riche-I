@@ -43,7 +43,7 @@ class Personnage : public sf::Drawable
       //    int CoutEnPierre,
       //    int Portee
       //);
-        bool setSelection(bool selection);
+        bool setSelection(bool selection );
         bool getSelection();
         sf::Vector2f getPosition() const;
     //  void definirennemi();
