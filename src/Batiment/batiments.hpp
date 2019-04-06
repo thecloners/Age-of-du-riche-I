@@ -16,9 +16,11 @@ class Batiment : public sf::Drawable // La on hérite de Drawable pour pouvoir s
     int mPV;
     int mTAILLE;
     sf::Vector2f mPosition;
+    sf::Color mColor;
     bat_t mTypeBat;
 
   public:
+
     Batiment(bat_t nom, sf::Vector2f Position);
     Batiment::~Batiment()
     // Alors cette fonction la permet de faire un window.draw(batiment)
@@ -28,7 +30,8 @@ class Batiment : public sf::Drawable // La on hérite de Drawable pour pouvoir s
     virtual void draw(sf::RenderTarget &target, sf::RenderStates states) const;
 
     void recevoirDegats(int degats);
-    void autoRegen ();
+    void autoRegen();
+    void returnPV();
 
 
 };

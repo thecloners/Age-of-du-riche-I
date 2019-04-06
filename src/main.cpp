@@ -5,8 +5,8 @@ int main()
 {
     sf::RenderWindow window(sf::VideoMode(1000, 1000), "Age Of Du Riche v 0.01");
 
-    Batiment bat7(maison, sf::Vector2f(50, 500));
-
+    Batiment bat7(moulin, sf::Vector2f(500, 500));
+    bat7.returnPV();
     while ( window.isOpen() )
     {
 
@@ -21,6 +21,8 @@ int main()
         window.draw(bat7);
         window.display();
     }
+
+
 
     return 0;
 }
