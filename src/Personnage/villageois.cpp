@@ -16,7 +16,7 @@ Villageois::Villageois(sf::Vector2f Position) : Personnage(
                       Position
 ) {}
 void Villageois::draw(sf::RenderTarget& target, sf::RenderStates states) const {
-    sf::CircleShape villageois(100);
+    sf::CircleShape villageois(15);
     villageois.setFillColor(sf::Color(250, 250, 50));
     villageois.setPosition(Personnage::getPosition());
     target.draw(villageois);

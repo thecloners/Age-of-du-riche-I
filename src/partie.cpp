@@ -7,7 +7,7 @@ using namespace std;
 Partie::Partie()
 {
     genereMap();
-    mPersonnages.push_back(Villageois(sf::Vector2f(50 ,50)))
+    mPersonnages.push_back(new Villageois(sf::Vector2f(50 ,50)));
 }
 
 // Fonction qui est appellée quand on fait window.draw(partie)
@@ -54,6 +54,9 @@ void Partie::draw(sf::RenderTarget &target, sf::RenderStates states) const
             case_d.setFillColor(mMap[i][j].mCouleur);
             target.draw(case_d);
         }
+    for(unsigned int i = 0 ; i < mPersonnages.size(); i++) {
+        target.draw(*mPersonnages[i]);
+    }
 }
 
 // Cette fonction est appellée en continu. Elle gère tout les trucs

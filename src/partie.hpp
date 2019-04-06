@@ -8,7 +8,7 @@
 
 
 // On hérite de la classe Drawable qui nous permet de nous faire dessiner
-#define TAILLE_PLATEAU 100
+#define TAILLE_PLATEAU 15
 
 class Partie : public sf::Drawable
 {
@@ -16,7 +16,7 @@ class Partie : public sf::Drawable
     int mNbJoueur;
     void genereMap();
     Case mMap[TAILLE_PLATEAU][TAILLE_PLATEAU];
-    std::vector<Personnage> mPersonnages;
+    std::vector<Personnage*> mPersonnages;
     virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
     // Fonction qui est appellée quand on fait window.draw(partie)
     // En gros, RenderTarget s'utilise comme window.
