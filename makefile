@@ -5,9 +5,8 @@ EXEC=ageofduriche
 SRCDIR=src
 ODIR=obj
 INCLUDEDIR=include
-SRC = $(wildcard $(SRCDIR)/*.cpp) \
-	  $(wildcard $(SRCDIR)/*/*.cpp)
-OBJ = $(subst $(SRCDIR),$(ODIR),$(SRC:.cpp=.o))
+SRC= $(wildcard $(SRCDIR)/*.cpp) $(wildcard $(SRCDIR)*/*/*.cpp)
+OBJ= $(subst $(SRCDIR),$(ODIR),$(SRC:.cpp=.o))
 
 
 all: $(EXEC)
