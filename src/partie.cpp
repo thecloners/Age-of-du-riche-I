@@ -22,27 +22,63 @@ void Partie::genereMap()
     {
         for (j = 0;j < TAILLE_PLATEAU; j++)
         {
-            unsigned int x = rand()%4;
-            if (x == 1)
-            {
-                mMap[i][j] = Case(mer);
-            }
-            if (x == 2)
-            {
-                mMap[i][j] = Case(plaine);
-            }
-            if (x == 3)
-            {
-                Partie::mMap[i][j] = Case(roche);
-            }
-            if (x == 4)
-            {
-                Partie::mMap[i][j] = Case(foret);
-            }
+            //unsigned int x = rand()%4;
+            //if (x == 1)
+            //{
+            //    mMap[i][j] = Case(mer);
+            //}
+        //    if (x == 2)
+        //    {
+        //        mMap[i][j] = Case(plaine);
+        //    }
+        //    if (x == 3)
+        //    {
+        //        Partie::mMap[i][j] = Case(roche);
+        //    }
+        //    if (x == 4)
+        //    {
+        //        Partie::mMap[i][j] = Case(foret);
+        //    }
+        mMap[i][j] = case_t.plaine;
+        }
+    }
+    for (i = 0; i < (TAILLE_PLATEAU*TAILLE_PLATEAU)/10; i++)
+    {
+        int a,b;
+        a = rand()%4;
+        b = rand()%4;
+
+        if (mMap[a][b] == case_t.plaine)
+            mMap[a][b] = case_t.roche;
+    }
+
+     elargissement_montagne();
+
+}
+void elargissement_montagne()
+{
+    int c,d,e;
+    for (i = 0; i < TAILLE_PLATEAU; i++)
+    {
+        for (j = 0;j < TAILLE_PLATEAU; j++)
+        {
+            c = rand()%2;
+            if (c == 0)
+                c = -1;
+
+            d = rand()%2;
+            if (d == 0)
+                d = -1
+
+            if (mMap[i][j] == case_t.roche)
+                mMap[i + c][j + d] = case_t.roche
+
+            e = rand()%3;
+            if (e == 3)
+                elargissement_montagne();
         }
     }
 }
-
 void Partie::draw(sf::RenderTarget &target, sf::RenderStates states) const
 {
     int i, j;
