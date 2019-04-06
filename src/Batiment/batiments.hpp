@@ -16,9 +16,11 @@ class Batiment : public sf::Drawable // La on hérite de Drawable pour pouvoir s
     int mPV;
     int mTAILLE;
     sf::Vector2f mPosition;
+    sf::Color mColor;
     bat_t mTypeBat;
 
   public:
+
     Batiment(bat_t nom, sf::Vector2f Position);
     // Alors cette fonction la permet de faire un window.draw(batiment)
     // RenderTarget représente la window
@@ -26,8 +28,9 @@ class Batiment : public sf::Drawable // La on hérite de Drawable pour pouvoir s
     // Vous faites RenderTarget.draw(tiboInShape);
     virtual void draw(sf::RenderTarget &target, sf::RenderStates states) const;
 
-    void recevoirDegats(int degats);   
-    void autoRegen ();
+    void recevoirDegats(int degats);
+    void autoRegen();
+    void returnPV();
 
 
 };
