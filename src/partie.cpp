@@ -8,6 +8,7 @@ Partie::Partie()
 {
     genereMap();
     mPersonnages.push_back(new Villageois(sf::Vector2f(50 ,50)));
+    mBatiments.push_back(new Batiment(moulin, sf::Vector2f(100, 100)));
 }
 
 // Fonction qui est appellée quand on fait window.draw(partie)
@@ -56,6 +57,9 @@ void Partie::draw(sf::RenderTarget &target, sf::RenderStates states) const
         }
     for(unsigned int i = 0 ; i < mPersonnages.size(); i++) {
         target.draw(*mPersonnages[i]);
+    }
+    for(unsigned int i = 0 ; i < mBatiments.size(); i++) {
+        target.draw(*mBatiments[i]);
     }
 }
 
