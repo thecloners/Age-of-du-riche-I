@@ -7,6 +7,7 @@
 
 // On hérite de la classe Drawable qui nous permet de nous faire dessiner
 #define TAILLE_PLATEAU 100
+
 class Partie : public sf::Drawable
 {
   private:

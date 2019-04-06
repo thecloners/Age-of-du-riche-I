@@ -18,7 +18,7 @@ Hitbox::Hitbox(sf::Vector2f p, sf::Vector2f taille)
     mArrete4.y = p.y + taille.y;
 }
 
-/*int Hitbox::collision()
+/*bool Hitbox::Collision()
 {
 
 }*/
