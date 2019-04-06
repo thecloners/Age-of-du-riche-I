@@ -4,6 +4,7 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 #include <string>
+#include "../hitbox.hpp"
 using namespace std;
 class Personnage : public sf::Drawable
 {
