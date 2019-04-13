@@ -1,5 +1,9 @@
 #include "case.hpp"
 
+Case::Case() {
+
+}
+
 Case::Case(case_t typeCase)
 {
     mTypeCase = typeCase;
