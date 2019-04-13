@@ -1,8 +1,8 @@
 #ifndef HITBOX_
 #define HITBOX_
+
 #include <SFML/Graphics.hpp>
 #include <iostream>
-
 #include "hitbox.hpp"
 
 //typedef enum {cercle,rectangle,quadrilatere} hitbox_t;
@@ -24,10 +24,12 @@ class Hitbox : public sf::Drawable
 
     Hitbox(sf::Vector2f p1,sf::Vector2f p2,sf::Vector2f p3,sf::Vector2f p4);
     Hitbox(sf::Vector2f p, sf::Vector2f taille);
+    Hitbox();
+    Hitbox(sf::Vector2f p, unsigned int tailleX, unsigned int tailleY);
 };
 //lien collisions
 //https://openclassrooms.com/fr/courses/1374826-theorie-des-collisions/1375352-formes-plus-complexes
-
+/*
 Vector2f Tsommet [4]={mSommet1,mSommet2,mSommet3,mSommet4};
 
 
@@ -50,6 +52,6 @@ Vector2f Tsommet [4]={mSommet1,mSommet2,mSommet3,mSommet4};
         return false;  // un point à droite et on arrête tout.
   }
   return true;  // si on sort du for, c'est qu'aucun point n'est à gauche, donc c'est bon.
-}
+}*/
 
 #endif

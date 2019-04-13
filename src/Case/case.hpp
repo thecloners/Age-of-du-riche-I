@@ -16,7 +16,7 @@ public:
     Case();
     Case(case_t typeCase);
     case_t returnTypeCase();
-    sf::Color returnColor();
+    sf::Color returnCouleur();
 };
 
 #endif

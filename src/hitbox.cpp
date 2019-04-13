@@ -24,7 +24,7 @@ Hitbox::Hitbox(sf::Vector2f p, unsigned int tailleX, unsigned int tailleY)
     mSommet2.x = p.x + tailleX;
     mSommet2.y = p.y;
     mSommet3.x = p.x + tailleX;
-    mSommet3.Y = p.Y + tailleY;
+    mSommet3.y = p.y + tailleY;
     mSommet4.x = p.x;
     mSommet4.y = p.y + tailleY;
 }
