@@ -3,8 +3,12 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 
+#include "hitbox.hpp"
 
 //typedef enum {cercle,rectangle,quadrilatere} hitbox_t;
+
+
+
 
 class Hitbox : public sf::Drawable
 {
@@ -16,7 +20,7 @@ class Hitbox : public sf::Drawable
       sf::Vector2f mSommet4;
 
   public:
-    bool mAction;
+
 
     Hitbox(sf::Vector2f p1,sf::Vector2f p2,sf::Vector2f p3,sf::Vector2f p4);
     Hitbox(sf::Vector2f p, sf::Vector2f taille);

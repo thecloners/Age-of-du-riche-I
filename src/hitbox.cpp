@@ -30,7 +30,7 @@ Hitbox::Hitbox()
 
 }
 
-/*int Hitbox::collision()
+/*bool Hitbox::Collision()
 {
 
 }*/
