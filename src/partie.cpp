@@ -1,5 +1,6 @@
 #include "partie.hpp"
 #include "Personnage/villageois.hpp"
+#include <time.h>
 using namespace std;
 
 #define TAILLE_FENETRE 1000
@@ -43,6 +44,7 @@ Partie::Partie()
 
 void Partie::genereMap()
 {
+    srand(time(NULL)); // initialisation de rand
     int i,j;
     for (i = 0; i < TAILLE_PLATEAU; i++)
     {
@@ -90,7 +92,7 @@ void Partie::draw(sf::RenderTarget &target, sf::RenderStates states) const
         //    cout << mMap[i][j].mCouleur << endl;
             sf::RectangleShape case_d(sf::Vector2f(TAILLE_FENETRE/TAILLE_PLATEAU, TAILLE_FENETRE/TAILLE_PLATEAU));
             case_d.setPosition(sf::Vector2f(i*(TAILLE_FENETRE/TAILLE_PLATEAU), j*(TAILLE_FENETRE/TAILLE_PLATEAU)));
-            case_d.setFillColor(sf::Color(132, 46, 27)/*mMap[i][j].returnCouleur()*/);
+            case_d.setFillColor(mMap[i][j].returnCouleur());
             target.draw(case_d);
         }
     for(unsigned int i = 0 ; i < mPersonnages.size(); i++) {
