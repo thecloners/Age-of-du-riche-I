@@ -4,6 +4,32 @@ using namespace std;
 
 #define TAILLE_FENETRE 1000
 // Le constructeur, (entre autre faut qu'il appelle genereMap)
+
+void Partie::elargissement_montagne()
+{
+    int c,d,e,i,j;
+    for (i = 0; i < TAILLE_PLATEAU; i++)
+    {
+        for (j = 0;j < TAILLE_PLATEAU; j++)
+        {
+            c = rand()%2;
+            if (c == 0)
+                c = -1;
+
+            d = rand()%2;
+            if (d == 0)
+                d = -1;
+
+            if (mMap[i][j].returnTypeCase() == roche)
+                mMap[i + c][j + d] = Case(roche);
+
+            e = rand()%3;
+            if (e == 3)
+                elargissement_montagne();
+        }
+    }
+}
+
 Partie::Partie()
 {
     genereMap();
@@ -39,7 +65,7 @@ void Partie::genereMap()
         //    {
         //        Partie::mMap[i][j] = Case(foret);
         //    }
-        mMap[i][j] = case_t.plaine;
+        mMap[i][j] = Case(plaine);
         }
     }
     for (i = 0; i < (TAILLE_PLATEAU*TAILLE_PLATEAU)/10; i++)
@@ -48,37 +74,13 @@ void Partie::genereMap()
         a = rand()%4;
         b = rand()%4;
 
-        if (mMap[a][b] == case_t.plaine)
-            mMap[a][b] = case_t.roche;
+        if (mMap[a][b].returnTypeCase() == plaine)
+            mMap[a][b] = Case(roche);
     }
-
      elargissement_montagne();
 
 }
-void elargissement_montagne()
-{
-    int c,d,e;
-    for (i = 0; i < TAILLE_PLATEAU; i++)
-    {
-        for (j = 0;j < TAILLE_PLATEAU; j++)
-        {
-            c = rand()%2;
-            if (c == 0)
-                c = -1;
 
-            d = rand()%2;
-            if (d == 0)
-                d = -1
-
-            if (mMap[i][j] == case_t.roche)
-                mMap[i + c][j + d] = case_t.roche
-
-            e = rand()%3;
-            if (e == 3)
-                elargissement_montagne();
-        }
-    }
-}
 void Partie::draw(sf::RenderTarget &target, sf::RenderStates states) const
 {
     int i, j;
@@ -88,7 +90,7 @@ void Partie::draw(sf::RenderTarget &target, sf::RenderStates states) const
         //    cout << mMap[i][j].mCouleur << endl;
             sf::RectangleShape case_d(sf::Vector2f(TAILLE_FENETRE/TAILLE_PLATEAU, TAILLE_FENETRE/TAILLE_PLATEAU));
             case_d.setPosition(sf::Vector2f(i*(TAILLE_FENETRE/TAILLE_PLATEAU), j*(TAILLE_FENETRE/TAILLE_PLATEAU)));
-            case_d.setFillColor(mMap[i][j].mCouleur);
+            case_d.setFillColor(sf::Color(132, 46, 27)/*mMap[i][j].returnCouleur()*/);
             target.draw(case_d);
         }
     for(unsigned int i = 0 ; i < mPersonnages.size(); i++) {

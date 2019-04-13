@@ -20,3 +20,14 @@ Case::Case(case_t typeCase)
         mCouleur = sf::Color(195, 170, 135);
     }
 }
+
+
+case_t Case::returnTypeCase()
+{
+    return mTypeCase;
+}
+
+sf::Color Case::returnCouleur()
+{
+    return mCouleur;
+}
