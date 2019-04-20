@@ -5,6 +5,7 @@
 int main()
 {
     Partie partie;
+    sf::Clock generalClock;
     sf::RenderWindow window(sf::VideoMode(1000, 1000), "Age Of Du Riche v0.01");
     while (window.isOpen())
     {
@@ -16,12 +17,13 @@ int main()
             else
                 partie.sendEvent(event);
         }
-        partie.update();
+        partie.update(generalClock.getElapsedTime().asSeconds());
+        generalClock.restart();
         window.clear();
         window.draw(partie);
         window.display();
+
     }
-    sf::Time GeneralTime;
 
     return 0;
 }

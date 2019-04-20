@@ -17,7 +17,6 @@ class Villageois : public Personnage
 public:
       Villageois(sf::Vector2f Position);
 
-
 private:
   virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 };

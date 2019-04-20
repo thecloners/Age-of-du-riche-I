@@ -7,8 +7,13 @@ using namespace std;
 Partie::Partie()
 {
     genereMap();
-    mPersonnages.push_back(new Villageois(sf::Vector2f(50 ,50)));
-    mBatiments.push_back(new Batiment(moulin, sf::Vector2f(100, 100)));
+    for(int i; i<20; i++) {
+    mPersonnages.push_back(new Villageois(sf::Vector2f(0 ,0)));
+
+    mPersonnages[i]->setCible(0+i*50, 0+i*20);
+    mPersonnages[i]->setSelection(false);
+  }
+  mBatiments.push_back(new Batiment(moulin, sf::Vector2f(100, 100)));
 }
 
 // Fonction qui est appellée quand on fait window.draw(partie)
@@ -65,8 +70,12 @@ void Partie::draw(sf::RenderTarget &target, sf::RenderStates states) const
 
 // Cette fonction est appellée en continu. Elle gère tout les trucs
 // Qui prennent du temps (e.g : flèches, personnages qui marchent, etc)
-void Partie::update()
+void Partie::update(float dt)
 {
+  for(int i; i<20; i++) {
+  mPersonnages[i]->deplacement(dt);
+
+}
 
 
 

@@ -27,7 +27,7 @@ class Partie : public sf::Drawable
     std::string nom;
     Partie(); // Le constructeur, (entre autre faut qu'il appelle genereMap)
     void sendEvent(sf::Event); // Cette fonction récupère les évènements du clavier
-    void update();             // Cette fonction est appellée en continu. Elle gère tout les trucs
+    void update(float dt);             // Cette fonction est appellée en continu. Elle gère tout les trucs
                                // Qui prennent du temps (e.g : flèches, personnages qui marchent, etc)
 };
 #endif
