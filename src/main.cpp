@@ -4,6 +4,8 @@
 
 int main()
 {
+    srand(time(NULL)); // initialisation de rand
+
     Partie partie;
     sf::RenderWindow window(sf::VideoMode(1000, 1000), "Age Of Du Riche v0.01");
     while (window.isOpen())

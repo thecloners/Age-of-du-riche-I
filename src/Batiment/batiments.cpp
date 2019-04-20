@@ -20,6 +20,10 @@ Batiment::Batiment (bat_t TypeBat, sf::Vector2f Position)
     }
 }
 
+Batiment::~Batiment(){
+
+}
+
 void Batiment::recevoirDegats(int degats)
 {
   mPV -= degats;

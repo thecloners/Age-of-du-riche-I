@@ -30,6 +30,6 @@ class Partie : public sf::Drawable
     void update();             // Cette fonction est appellée en continu. Elle gère tout les trucs
                                // Qui prennent du temps (e.g : flèches, personnages qui marchent, etc)
 
-    void elargissement_montagne();                           
+    void elargissement_montagne();
 };
 #endif
