@@ -17,11 +17,11 @@ Case::Case(case_t typeCase)
     }
     if (typeCase == plaine) {
         mpasser_ou_pas_passer = 0;
-        mCouleur = sf::Color(120, 210, 65);
+        mCouleur = sf::Color(255, 255, 107);
     }
     if (typeCase == roche) {
         mpasser_ou_pas_passer = 1;
-        mCouleur = sf::Color(195, 170, 135);
+        mCouleur = sf::Color(88, 41, 0);
     }
 }
 
@@ -31,7 +31,7 @@ case_t Case::returnTypeCase()
     return mTypeCase;
 }
 
-sf::Color Case::returnCouleur()
+sf::Color Case::returnCouleur() const
 {
     return mCouleur;
 }
