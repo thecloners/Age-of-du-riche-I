@@ -13,7 +13,7 @@ void Partie::elargissement_montagne()
     {
         for (j = 0;j < TAILLE_PLATEAU; j++)
         {
-            c = rand()%2;
+            c = rand()%2;    //
             if (c == 0)
                 c = -1;
 
@@ -44,30 +44,12 @@ Partie::Partie()
 
 void Partie::genereMap()
 {
-    srand(time(NULL)); // initialisation de rand
     int i,j;
     for (i = 0; i < TAILLE_PLATEAU; i++)
     {
         for (j = 0;j < TAILLE_PLATEAU; j++)
         {
-            //unsigned int x = rand()%4;
-            //if (x == 1)
-            //{
-            //    mMap[i][j] = Case(mer);
-            //}
-        //    if (x == 2)
-        //    {
-        //        mMap[i][j] = Case(plaine);
-        //    }
-        //    if (x == 3)
-        //    {
-        //        Partie::mMap[i][j] = Case(roche);
-        //    }
-        //    if (x == 4)
-        //    {
-        //        Partie::mMap[i][j] = Case(foret);
-        //    }
-        mMap[i][j] = Case(plaine);
+            mMap[i][j] = Case(plaine);
         }
     }
     for (i = 0; i < (TAILLE_PLATEAU*TAILLE_PLATEAU)/10; i++)

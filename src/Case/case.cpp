@@ -17,7 +17,7 @@ Case::Case(case_t typeCase)
     }
     if (typeCase == plaine) {
         mpasser_ou_pas_passer = 0;
-        mCouleur = sf::Color(255, 255, 107);
+        mCouleur = sf::Color(39, 174, 96);
     }
     if (typeCase == roche) {
         mpasser_ou_pas_passer = 1;

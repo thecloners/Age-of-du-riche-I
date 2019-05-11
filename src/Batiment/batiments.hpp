@@ -18,12 +18,12 @@ class Batiment : public sf::Drawable
     sf::Vector2f mPosition;
     sf::Color mColor;
     bat_t mTypeBat;
-    hitbox mHitboxDefensive();
+    //Hitbox mHitboxDefensive();
 
   public:
 
     Batiment(bat_t nom, sf::Vector2f Position);
-    Batiment::~Batiment();
+    ~Batiment();
 
 
     virtual void draw(sf::RenderTarget &target, sf::RenderStates states) const;
