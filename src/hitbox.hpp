@@ -3,14 +3,14 @@
 
 #include <SFML/Graphics.hpp>
 #include <iostream>
-#include "hitbox.hpp"
+
 
 //typedef enum {cercle,rectangle,quadrilatere} hitbox_t;
 
 
 
 
-class Hitbox : public sf::Drawable
+class Hitbox
 {
   private:
 
@@ -26,32 +26,12 @@ class Hitbox : public sf::Drawable
     Hitbox(sf::Vector2f p, sf::Vector2f taille);
     Hitbox();
     Hitbox(sf::Vector2f p, unsigned int tailleX, unsigned int tailleY);
+    bool collisions(Hitbox obj1, Hitbox obj2);
+    bool ccw(sf::Vector2f A, sf::Vector2f B, sf::Vector2f C);
+    bool lines_intersect(sf::Vector2f A, sf::Vector2f B, sf::Vector2f C,sf::Vector2f D);
 };
 //lien collisions
 //https://openclassrooms.com/fr/courses/1374826-theorie-des-collisions/1375352-formes-plus-complexes
-/*
-Vector2f Tsommet [4]={mSommet1,mSommet2,mSommet3,mSommet4};
 
-
-  int i;
-  for(i=0;i<4;i++)
-  {
-     Point A = tab[i];
-     Point B;
-     if (i==4-1)  // si c'est le dernier point, on relie au premier
-         B = tab[0];
-     else           // sinon on relie au suivant.
-         B = tab[i+1];
-     Vecteur D,T;
-     D.x = B.x - A.x;
-     D.y = B.y - A.y;
-     T.x = P.x - A.x;
-     T.y = P.y - A.y;
-     float d = D.x*T.y - D.y*T.x;
-     if (d<=0)
-        return false;  // un point à droite et on arrête tout.
-  }
-  return true;  // si on sort du for, c'est qu'aucun point n'est à gauche, donc c'est bon.
-}*/
 
 #endif
