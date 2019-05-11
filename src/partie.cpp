@@ -5,37 +5,34 @@ using namespace std;
 
 #define TAILLE_FENETRE 1000
 
-void Partie::elargissement_montagne()
+void Partie::elargissement_montagne(int i,int j)
 {
-    int c,d,e,i,j;
-    for (i = 1; i < TAILLE_PLATEAU-1; i++)
-    {
-        for (j = 1;j < TAILLE_PLATEAU-1; j++)
-        {
-            c = rand()%2;    //
-            if (c == 0) // Pour passer de 0/1 à -1/1
+    int c,d,e;//,i,j;
+    //for (i = 1; i < TAILLE_PLATEAU-1; i++)
+    //{
+//        for (j = 1;j < TAILLE_PLATEAU-1; j++)
+    //    {
+            c = rand()%3;    //
+            if (c == 2) // Pour passer de 0/1 à -1/1
                 c = -1;
 
-            d = rand()%2;
-            if (d == 0)
+            d = rand()%3;
+            if (d == 2)
                 d = -1;
 
             if (mMap[i][j].returnTypeCase() == roche)
                 mMap[i + c][j + d] = Case(roche);
 
-            e = rand()%3;
-            if (e == 3)
-                elargissement_montagne();
-        }
-    }
+            e = rand()%10;
+            if (e == 1 || e == 2 || e == 3 || e == 4)
+            elargissement_montagne(i,j);
+
+
 }
-void Partie::lac()
+void Partie::lac(int i,int j)
 {
-    int c,d,e,i,j;
-    for (i = 1; i < TAILLE_PLATEAU-1; i++)
-    {
-        for (j = 1;j < TAILLE_PLATEAU-1; j++)
-        {
+    int c,d,e;
+
             c = rand()%3;
             if (c == 2)
                 c = -1;
@@ -47,11 +44,28 @@ void Partie::lac()
                 if (mMap[i + c][j + d].returnTypeCase() == plaine)
                     mMap[i + c][j + d] = mer;
             }
-            e = rand()%3;
-            if (e == 3)
-                lac();
-        }
-    }
+            e = rand()%6;
+            if (e == 0 || e == 1 || e == 2)
+                lac(i,j);
+}
+void Partie::bois(int i,int j)
+{
+    int c,d,e;
+
+            c = rand()%3;
+            if (c == 2)
+                c = -1;
+            d = rand()%3;
+            if (c == 2)
+                c = -1;
+            if (mMap[i][j].returnTypeCase() == foret)
+            {
+                if (mMap[i + c][j + d].returnTypeCase() == plaine)
+                    mMap[i + c][j + d] = foret;
+            }
+            e = rand()%2;
+            if (e == 0 )
+                bois(i,j);
 }
 Partie::Partie()
 {
@@ -83,8 +97,15 @@ void Partie::genereMap()
         if (mMap[a][b].returnTypeCase() == plaine)
             mMap[a][b] = Case(roche);
     }
-     elargissement_montagne();
-     for (i = 0; i < (TAILLE_PLATEAU*TAILLE_PLATEAU)/30; i++)
+    //for(i = 0; i<2; i++)
+    for (i = 1; i < TAILLE_PLATEAU-1; i++)
+    {
+        for (j = 1;j < TAILLE_PLATEAU-1; j++)
+        {
+            elargissement_montagne(i,j);
+        }
+    }
+     for (i = 0; i < (TAILLE_PLATEAU*TAILLE_PLATEAU)/70; i++)
     {
         int a,b;
         a = rand()%TAILLE_PLATEAU;
@@ -93,7 +114,29 @@ void Partie::genereMap()
         if (mMap[a][b].returnTypeCase() == plaine)
             mMap[a][b] = Case(mer);
     }
-    lac();
+    for (i = 1; i < TAILLE_PLATEAU-1; i++)
+    {
+        for (j = 1;j < TAILLE_PLATEAU-1; j++)
+        {
+            lac(i,j);
+        }
+    }
+    for (i = 0; i < (TAILLE_PLATEAU*TAILLE_PLATEAU)/70; i++)
+    {
+        int a,b;
+        a = rand()%TAILLE_PLATEAU;
+        b = rand()%TAILLE_PLATEAU;
+
+        if (mMap[a][b].returnTypeCase() == plaine)
+            mMap[a][b] = Case(foret);
+    }
+    for (i = 1; i < TAILLE_PLATEAU-1; i++)
+    {
+        for (j = 1;j < TAILLE_PLATEAU-1; j++)
+        {
+            bois(i,j);
+        }
+    }
 }
 
 void Partie::draw(sf::RenderTarget &target, sf::RenderStates states) const
