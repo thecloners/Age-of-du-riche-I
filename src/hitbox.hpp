@@ -3,14 +3,14 @@
 
 #include <SFML/Graphics.hpp>
 #include <iostream>
-#include "hitbox.hpp"
+
 
 //typedef enum {cercle,rectangle,quadrilatere} hitbox_t;
 
 
 
 
-class Hitbox : public sf::Drawable
+class Hitbox
 {
   private:
 
@@ -26,6 +26,9 @@ class Hitbox : public sf::Drawable
     Hitbox(sf::Vector2f p, sf::Vector2f taille);
     Hitbox();
     Hitbox(sf::Vector2f p, unsigned int tailleX, unsigned int tailleY);
+    bool collisions(Hitbox obj1, Hitbox obj2);
+    bool ccw(sf::Vector2f A, sf::Vector2f B, sf::Vector2f C);
+    bool lines_intersect(sf::Vector2f A, sf::Vector2f B, sf::Vector2f C,sf::Vector2f D);
 };
 //lien collisions
 //https://openclassrooms.com/fr/courses/1374826-theorie-des-collisions/1375352-formes-plus-complexes

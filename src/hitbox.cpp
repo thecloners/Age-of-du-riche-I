@@ -38,20 +38,24 @@ Hitbox::Hitbox()
 
 }
 
+bool Hitbox::ccw(sf::Vector2f A, sf::Vector2f B, sf::Vector2f C)
+{
+    return (C.y-A.y)*(B.x-A.x) > (B.y-A.y)*(C.x-A.x);
+}
+
+bool Hitbox::lines_intersect(sf::Vector2f A, sf::Vector2f B, sf::Vector2f C,sf::Vector2f D)
+{
+    return ccw(A, C, D) != ccw(B, C, D) && ccw(A, B, C) != ccw(A, B, D);
+}
+
+
+
 bool Hitbox::collisions(Hitbox obj1, Hitbox obj2){
 
-    Vector2f Tsommet1 [4]= {obj1.mSommet1,obj1.mSommet2,obj1.mSommet3,obj1.mSommet4};
-    Vector2f Tsommet2 [4]= {obj2.mSommet1,obj2.mSommet2,obj2.mSommet3,obj2.mSommet4};
+    sf::Vector2f Tsommet1 [4]= {obj1.mSommet1,obj1.mSommet2,obj1.mSommet3,obj1.mSommet4};
+    sf::Vector2f Tsommet2 [4]= {obj2.mSommet1,obj2.mSommet2,obj2.mSommet3,obj2.mSommet4};
 
-    bool ccw(sf::Vector2f A, sf::Vector2f B,sf::Vector2f C)
-    {
-        return (C.y-A.y)*(B.x-A.x) > (B.y-A.y)*(C.x-A.x)
-    }
 
-    bool lines_intersect(sf::Vector2f A, sf::Vector2f B, sf::Vector2f C,sf::Vector2f D)
-    {
-        return ccw(A, C, D) != ccw(B, C, D) && ccw(A, B, C) != ccw(A, B, D)
-    }
 
     int a,a_;
     int b,b_;
@@ -80,35 +84,3 @@ bool Hitbox::collisions(Hitbox obj1, Hitbox obj2){
 }
 return false;
 }
-
-
-
-
-
-/*
-      int i;
-      for(i=0;i<4;i++)
-      {
-         Point A = Tsommet[i];
-         Point B;
-         if (i==4-1)
-             B = Tsommet[0];
-         else
-             B = Tsommet[i+1];
-         Vecteur D,T;
-         D.x = B.x - A.x;
-         D.y = B.y - A.y;
-         T.x = .x - A.x;
-         T.y = .y - A.y;
-         float d = D.x*T.y - D.y*T.x;
-         if (d<=0)
-            return false;
-      }
-      return true;
-    }
-}*/
-
-/*bool Hitbox::Collision()
-{
-
-}*/
