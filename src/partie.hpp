@@ -9,7 +9,7 @@
 
 
 // On hérite de la classe Drawable qui nous permet de nous faire dessiner
-#define TAILLE_PLATEAU 15
+#define TAILLE_PLATEAU 50
 
 class Partie : public sf::Drawable
 {
@@ -31,5 +31,6 @@ class Partie : public sf::Drawable
                                // Qui prennent du temps (e.g : flèches, personnages qui marchent, etc)
 
     void elargissement_montagne();
+    void lac();
 };
 #endif

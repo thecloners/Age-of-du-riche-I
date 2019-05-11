@@ -40,7 +40,7 @@ sf::Time timeBat = sf::milliseconds(1000);
 // Vous faites RenderTarget.draw(tiboInShape);
 void Batiment::draw(sf::RenderTarget &target, sf::RenderStates states) const
 {
-    sf::CircleShape mTriangle(80.f, 3);
+    sf::CircleShape mTriangle(35.f, 3);
     mTriangle.setFillColor(sf::Color(132, 46, 27));
      mTriangle.setPosition(10.f, 50.f);
      target.draw(mTriangle);

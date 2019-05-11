@@ -4,17 +4,16 @@
 using namespace std;
 
 #define TAILLE_FENETRE 1000
-// Le constructeur, (entre autre faut qu'il appelle genereMap)
 
 void Partie::elargissement_montagne()
 {
     int c,d,e,i,j;
-    for (i = 0; i < TAILLE_PLATEAU; i++)
+    for (i = 1; i < TAILLE_PLATEAU-1; i++)
     {
-        for (j = 0;j < TAILLE_PLATEAU; j++)
+        for (j = 1;j < TAILLE_PLATEAU-1; j++)
         {
             c = rand()%2;    //
-            if (c == 0)
+            if (c == 0) // Pour passer de 0/1 à -1/1
                 c = -1;
 
             d = rand()%2;
@@ -30,7 +29,30 @@ void Partie::elargissement_montagne()
         }
     }
 }
-
+void Partie::lac()
+{
+    int c,d,e,i,j;
+    for (i = 1; i < TAILLE_PLATEAU-1; i++)
+    {
+        for (j = 1;j < TAILLE_PLATEAU-1; j++)
+        {
+            c = rand()%3;
+            if (c == 2)
+                c = -1;
+            d = rand()%3;
+            if (c == 2)
+                c = -1;
+            if (mMap[i][j].returnTypeCase() == mer)
+            {
+                if (mMap[i + c][j + d].returnTypeCase() == plaine)
+                    mMap[i + c][j + d] = mer;
+            }
+            e = rand()%3;
+            if (e == 3)
+                lac();
+        }
+    }
+}
 Partie::Partie()
 {
     genereMap();
@@ -52,17 +74,26 @@ void Partie::genereMap()
             mMap[i][j] = Case(plaine);
         }
     }
-    for (i = 0; i < (TAILLE_PLATEAU*TAILLE_PLATEAU)/10; i++)
+    for (i = 0; i < (TAILLE_PLATEAU*TAILLE_PLATEAU)/40; i++)
     {
         int a,b;
-        a = rand()%4;
-        b = rand()%4;
+        a = rand()%TAILLE_PLATEAU;
+        b = rand()%TAILLE_PLATEAU;
 
         if (mMap[a][b].returnTypeCase() == plaine)
             mMap[a][b] = Case(roche);
     }
      elargissement_montagne();
+     for (i = 0; i < (TAILLE_PLATEAU*TAILLE_PLATEAU)/30; i++)
+    {
+        int a,b;
+        a = rand()%TAILLE_PLATEAU;
+        b = rand()%TAILLE_PLATEAU;
 
+        if (mMap[a][b].returnTypeCase() == plaine)
+            mMap[a][b] = Case(mer);
+    }
+    lac();
 }
 
 void Partie::draw(sf::RenderTarget &target, sf::RenderStates states) const
