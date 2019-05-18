@@ -84,11 +84,3 @@ sf::Vector2f Personnage::setCible(int x,int y) {
       mCible.y=y;
       return mCible;
 }
-
-void Personnage::donneesBatiment(std::vector<Batiment*> batiments) {
-    for(unsigned int i = 0; i < batiments.size(); i++) {
-        Hitbox box = batiments.getHitbox();
-        Vector2f un( box.sommet1.x,  box.sommet1.y);
-        Vector2f quatre( box.sommet4.x,  box.sommet4.y);
-    }
-}
