@@ -165,7 +165,6 @@ void Partie::update()
 {
 
 
-
 }
 
 // Cette fonction récupère les évènements du clavier
