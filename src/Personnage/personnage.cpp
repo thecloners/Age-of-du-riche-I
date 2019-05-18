@@ -60,9 +60,9 @@ bool Personnage::getSelection() const {
       return mselection;
 }
 
-void Personnage::deplacement(sf::Vector2f pointDarrive){
-    mPosition.x += (getPosition().x -getCible().x) / (sqrt(pow(getPosition().x-getCible().x, 2) + pow(getPosition().y-getCible().y, 2)));
-    mPosition.y += (getPosition().y -getCible().y) / (sqrt(pow(getPosition().x-getCible().x, 2) + pow(getPosition().y-getCible().y, 2)));
+void Personnage::deplacement(){
+    mPosition.x += (getCible().x- getPosition().x) / (sqrt(pow(getPosition().x-getCible().x, 2) + pow(getPosition().y-getCible().y, 2)));
+    mPosition.y += (getCible().y - getPosition().y) / (sqrt(pow(getPosition().x-getCible().x, 2) + pow(getPosition().y-getCible().y, 2)));
 
 }
 
