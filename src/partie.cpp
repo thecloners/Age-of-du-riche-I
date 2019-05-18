@@ -1,5 +1,6 @@
 #include "partie.hpp"
 #include "Personnage/villageois.hpp"
+#include <cmath>
 #include <time.h>
 using namespace std;
 
@@ -70,7 +71,8 @@ void Partie::bois(int i,int j)
 Partie::Partie()
 {
     genereMap();
-    mPersonnages.push_back(new Villageois(sf::Vector2f(50 ,50)));
+    for(unsigned int i = 0; i < 10; i++)
+        mPersonnages.push_back(new Villageois(sf::Vector2f(rand()%1000 , rand()%1000)));
     mBatiments.push_back(new Batiment(moulin, sf::Vector2f(100, 100)));
 }
 
@@ -169,6 +171,28 @@ void Partie::update()
 }
 
 // Cette fonction récupère les évènements du clavier
-void Partie::sendEvent(sf::Event)
+void Partie::sendEvent(sf::Event event )
 {
+
+    int v,w,i;
+
+      if (event.type == sf::Event::MouseButtonPressed )
+     {
+         if (event.mouseButton.button == sf::Mouse::Left)
+         {
+            v = event.mouseButton.x;
+            w = event.mouseButton.y;
+            for(unsigned int i = 0 ; i < mPersonnages.size(); i++)
+            {
+            if (sqrt(pow(mPersonnages[i]->getPosition().x - v ,2)+pow(mPersonnages[i]->getPosition().y - w,2)) < 50)
+                {
+                    if(mPersonnages[i]->getSelection())
+                        mPersonnages[i]->setSelection(false);
+                    else
+                        mPersonnages[i]->setSelection(true);
+
+                }
+            }
+         }
+     }
 }
