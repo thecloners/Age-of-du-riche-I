@@ -39,7 +39,7 @@ class Personnage : public sf::Drawable
           Personnage(int Vie, int Degat, int Portee, int CoutEnOr, int CoutEnNourriture, int CoutEnBois, int CoutEnPierre, int vitesse, sf::Vector2f Position);
           Hitbox getDefensiveHitbox();
           Hitbox getOffensiveHitbox();
-          sf::Vector2f deplacement(float dt);
+          void deplacement();
       //Personnage(
       //    int VieMax,
       //    int Position,

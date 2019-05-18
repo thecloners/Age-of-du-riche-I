@@ -3,6 +3,7 @@
 #include <string>
 #include "personnage.hpp"
 #include "../hitbox.hpp"
+#include "math.h"
 
 using namespace std;
 using namespace sf;
@@ -54,12 +55,22 @@ Hitbox Personnage::getOffensiveHitbox(){
 bool Personnage::getSelection() const {
   return mselection;
 }
-bool Personnage::setSelection(bool selection){
+ bool Personnage::setSelection(bool selection){
       mselection = selection;
       return mselection;
 }
 
-sf::Vector2f Personnage::deplacement(float dt) {
+void Personnage::deplacement(){
+    mPosition.x += (getCible().x- getPosition().x) / (sqrt(pow(getPosition().x-getCible().x, 2) + pow(getPosition().y-getCible().y, 2)));
+    mPosition.y += (getCible().y - getPosition().y) / (sqrt(pow(getPosition().x-getCible().x, 2) + pow(getPosition().y-getCible().y, 2)));
+
+}
+
+
+
+
+
+/*sf::Vector2f Personnage::deplacement(float dt) {
       if(abs(getPosition().x - getCible().x) >= 5) {
           if(getPosition().x < getCible().x){
                   mPosition.x+=mVitesse*dt;
@@ -77,13 +88,10 @@ sf::Vector2f Personnage::deplacement(float dt) {
       }
       cout << mPosition.x << " " << mPosition.y << endl;
       return mPosition;
-}
+}*/
 
 sf::Vector2f Personnage::setCible(int x,int y) {
       mCible.x=x;
       mCible.y=y;
       return mCible;
-}
-
-void Personnage::donneesBatiment(std::vector<Batiment*> batiments) {
 }
