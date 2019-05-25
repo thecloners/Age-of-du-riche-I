@@ -175,8 +175,8 @@ void Partie::update()
 }
 
     int i, j;
-    for(i=0;i<mPersonnages.size();i++)
-        for(j=0;j<mPersonnages.size();j++) {
+    for(i=0;i<mPersonnages.size();i++) {
+      for(j=0;j<mPersonnages.size();j++) {
             if(collisions(
                 mPersonnages[i]->getDefensiveHitbox(),
                 mPersonnages[j]->getOffensiveHitbox()
