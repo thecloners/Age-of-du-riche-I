@@ -162,12 +162,20 @@ void Partie::draw(sf::RenderTarget &target, sf::RenderStates states) const
 // Cette fonction est appellée en continu. Elle gère tout les trucs
 // Qui prennent du temps (e.g : flèches, personnages qui marchent, etc)
 void Partie::update()
+
 {
 
+    int i, j;
+    for(i=0;i<mPersonnages.size();i++)
+        for(j=0;j<mPersonnages.size();j++) {
+            if(collisions(
+                mPersonnages[i]->getDefensiveHitbox(),
+                mPersonnages[j]->getOffensiveHitbox()
+            ))
+            setVie(mPersonnages[i])=getVie(mPersonnages[i])-5
+        }
 
 }
-
-// Cette fonction récupère les évènements du clavier
 void Partie::sendEvent(sf::Event)
 {
 }
