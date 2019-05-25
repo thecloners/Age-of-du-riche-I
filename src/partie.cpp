@@ -174,10 +174,35 @@ void Partie::update()
                 mPersonnages[i]->getDefensiveHitbox(),
                 mPersonnages[j]->getOffensiveHitbox()
             ))
-    
+
         }
 
 }
+//void nuke();
+//{
+
+//int i,j,a;
+    //for (i = 0; i < TAILLE_PLATEAU; i++)
+    //{
+    //    for (j = 0;j < TAILLE_PLATEAU; j++)
+    //    {
+    //        a = srand()%4;
+    //        if (a ==0 || a == 1)
+    //        mMap[i][j] = Case(roche);
+    //        else
+    //        mMap[i][j] = Case(mer);
+    //    }
+    //}
+    //for(unsigned int i = 0 ; i < mPersonnages.size(); i++)
+    //{
+    //    mPersonnages[i]->setVie(0);
+    //}
+//}
+//void Partie::Equipe()
+//{
+//    int  equipe;
+
+//}
 void Partie::sendEvent(sf::Event)
 {
 
