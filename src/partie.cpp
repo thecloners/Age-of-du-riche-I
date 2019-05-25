@@ -165,7 +165,8 @@ void Partie::draw(sf::RenderTarget &target, sf::RenderStates states) const
 // Qui prennent du temps (e.g : flèches, personnages qui marchent, etc)
 void Partie::update()
 {
-    for(unsigned int i = 0 ; i < mPersonnages.size(); i++) {
+    for(unsigned int i = 0 ; i < mPersonnages.size(); i++)
+    {
         mPersonnages[i]->deplacement();
     }
 }
@@ -174,8 +175,7 @@ void Partie::update()
 void Partie::sendEvent(sf::Event event )
 {
 
-    int v,w,i;
-
+    int v,w;
       if (event.type == sf::Event::MouseButtonPressed )
      {
          if (event.mouseButton.button == sf::Mouse::Left)
@@ -184,13 +184,36 @@ void Partie::sendEvent(sf::Event event )
             w = event.mouseButton.y;
             for(unsigned int i = 0 ; i < mPersonnages.size(); i++)
             {
-            if (sqrt(pow(mPersonnages[i]->getPosition().x - v ,2)+pow(mPersonnages[i]->getPosition().y - w,2)) < 50)
+                if (sqrt(pow(mPersonnages[i]->getPosition().x - v ,2)+pow(mPersonnages[i]->getPosition().y - w,2)) < 50)
                 {
                     if(mPersonnages[i]->getSelection())
+                    {
                         mPersonnages[i]->setSelection(false);
+                    }
                     else
+                    {
                         mPersonnages[i]->setSelection(true);
-
+                    }
+                }
+                else
+                {
+                    for(unsigned int j = 0 ; j < mPersonnages.size(); j++)
+                    {
+                        mPersonnages[j]->setSelection(false);
+                    }
+                }
+            }
+         }
+         else if(event.mouseButton.button == sf::Mouse::Right)
+         {
+             v = event.mouseButton.x;
+             w = event.mouseButton.y;
+             for(unsigned int i = 0 ; i < mPersonnages.size(); i++)
+            {
+                if (mPersonnages[i]->getSelection())
+                {
+                    mPersonnages[i]->setCible(v,w);
+                    mPersonnages[i]->deplacement(); //va la position du clic
                 }
             }
          }
