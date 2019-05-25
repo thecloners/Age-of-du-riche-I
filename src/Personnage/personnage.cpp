@@ -55,16 +55,25 @@ Hitbox Personnage::getOffensiveHitbox(){
 bool Personnage::getSelection() const {
   return mselection;
 }
- bool Personnage::setSelection(bool selection){
+ void Personnage::setSelection(bool selection){
       mselection = selection;
-      return mselection;
+}
+
+void Personnage::setVie(int vie){
+  mVie=vie;
+}
+
+int Personnage::getVie() {
+  return mVie;
 }
 
 void Personnage::deplacement(){
+  if((abs(mPosition.x-getCible().x)>1) || (abs(mPosition.y-getCible().y)>1)) {
     mPosition.x += (getCible().x- getPosition().x) / (sqrt(pow(getPosition().x-getCible().x, 2) + pow(getPosition().y-getCible().y, 2)));
     mPosition.y += (getCible().y - getPosition().y) / (sqrt(pow(getPosition().x-getCible().x, 2) + pow(getPosition().y-getCible().y, 2)));
+  }
+  }
 
-}
 
 
 

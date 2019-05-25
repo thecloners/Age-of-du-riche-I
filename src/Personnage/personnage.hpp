@@ -16,7 +16,6 @@ class Personnage : public sf::Drawable
       sf::Vector2f mCible;
       sf::Vector2f mPosition; // Ouais, pas mal. On attaque donc juste sur une position
 
-      int mVie;
       int mVieMax;
 
       int mDegat;
@@ -36,6 +35,7 @@ class Personnage : public sf::Drawable
 
 
     public:
+          int mVie;
           Personnage(int Vie, int Degat, int Portee, int CoutEnOr, int CoutEnNourriture, int CoutEnBois, int CoutEnPierre, int vitesse, sf::Vector2f Position);
           Hitbox getDefensiveHitbox();
           Hitbox getOffensiveHitbox();
@@ -49,8 +49,10 @@ class Personnage : public sf::Drawable
       //    int CoutEnPierre,
       //    int Portee
       //);
+        int getVie();
+        void setVie(int vie);
         void donneesBatiment(std::vector<Batiment*> batiments);
-        bool setSelection(bool selection );
+        void setSelection(bool selection );
         bool getSelection() const;
         sf::Vector2f getPosition() const;
         sf::Vector2f getCible() const;
