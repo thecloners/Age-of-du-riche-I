@@ -70,7 +70,9 @@ void Partie::bois(int i,int j)
 Partie::Partie()
 {
     genereMap();
-    mPersonnages.push_back(new Villageois(sf::Vector2f(50 ,50)));
+    for(unsigned int i = 0 ; i < 1; i++) {
+      mPersonnages.push_back(new Villageois(sf::Vector2f(600 ,700)));
+    }
     mBatiments.push_back(new Batiment(moulin, sf::Vector2f(100, 100)));
 }
 
@@ -164,7 +166,7 @@ void Partie::draw(sf::RenderTarget &target, sf::RenderStates states) const
 void Partie::update()
 {
     for(unsigned int i = 0 ; i < mPersonnages.size(); i++) {
-        mPersonnages[i]->setCible(500, 600);
+        mPersonnages[i]->setCible(500, 500);
         mPersonnages[i]->deplacement();
     }
 }

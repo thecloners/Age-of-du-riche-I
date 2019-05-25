@@ -49,8 +49,10 @@ class Personnage : public sf::Drawable
       //    int CoutEnPierre,
       //    int Portee
       //);
+        int getVie();
+        void setVie(int vie);
         void donneesBatiment(std::vector<Batiment*> batiments);
-        bool setSelection(bool selection );
+        void setSelection(bool selection );
         bool getSelection() const;
         sf::Vector2f getPosition() const;
         sf::Vector2f getCible() const;
