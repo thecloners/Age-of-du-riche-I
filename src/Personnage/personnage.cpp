@@ -63,7 +63,7 @@ void Personnage::setVie(int vie){
   mVie=vie;
 }
 
-int Personnage::getVie() {
+int Personnage::getVie() const {
   return mVie;
 }
 

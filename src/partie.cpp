@@ -71,9 +71,10 @@ void Partie::bois(int i,int j)
 Partie::Partie()
 {
     genereMap();
-    for(unsigned int i = 0; i < 10; i++)
-        mPersonnages.push_back(new Villageois(sf::Vector2f(rand()%1000 , rand()%1000)));
+    for(unsigned int i = 0; i < 500; i++)
+    mPersonnages.push_back(new Villageois(sf::Vector2f(rand()%1000 , rand()%1000)));
     mBatiments.push_back(new Batiment(moulin, sf::Vector2f(100, 100)));
+
 }
 
 // Fonction qui est appellée quand on fait window.draw(partie)
@@ -168,6 +169,7 @@ void Partie::update()
     for(unsigned int i = 0 ; i < mPersonnages.size(); i++)
     {
         mPersonnages[i]->deplacement();
+        mPersonnages[i]->setVie(100);
     }
 }
 
