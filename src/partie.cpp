@@ -175,24 +175,55 @@ void Partie::update()
                 mPersonnages[j]->getOffensiveHitbox()
             ))
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> f48a53b52b88d14743c2207ab7b91630cb7c626b
         }
 
 }
+//void nuke();
+//{
+
+//int i,j,a;
+    //for (i = 0; i < TAILLE_PLATEAU; i++)
+    //{
+    //    for (j = 0;j < TAILLE_PLATEAU; j++)
+    //    {
+    //        a = srand()%4;
+    //        if (a ==0 || a == 1)
+    //        mMap[i][j] = Case(roche);
+    //        else
+    //        mMap[i][j] = Case(mer);
+    //    }
+    //}
+    //for(unsigned int i = 0 ; i < mPersonnages.size(); i++)
+    //{
+    //    mPersonnages[i]->setVie(0);
+    //}
+//}
+//void Partie::Equipe()
+//{
+//    int  equipe;
+
+//}
 void Partie::sendEvent(sf::Event)
 {
 
-    int v,w;
+    int v,w,k;
+    k = 0;
       if (event.type == sf::Event::MouseButtonPressed )
      {
          if (event.mouseButton.button == sf::Mouse::Left)
          {
             v = event.mouseButton.x;
             w = event.mouseButton.y;
+            bool yen_a_un_ka_ete_selectionne = false;
             for(unsigned int i = 0 ; i < mPersonnages.size(); i++)
             {
                 if (sqrt(pow(mPersonnages[i]->getPosition().x - v ,2)+pow(mPersonnages[i]->getPosition().y - w,2)) < 50)
                 {
+                    yen_a_un_ka_ete_selectionne = true;
                     if(mPersonnages[i]->getSelection())
                     {
                         mPersonnages[i]->setSelection(false);
@@ -202,12 +233,10 @@ void Partie::sendEvent(sf::Event)
                         mPersonnages[i]->setSelection(true);
                     }
                 }
-                else
-                {
-                    for(unsigned int j = 0 ; j < mPersonnages.size(); j++)
-                    {
-                        mPersonnages[j]->setSelection(false);
-                    }
+            }
+            if(!yen_a_un_ka_ete_selectionne) {
+                for(unsigned int i = 0 ; i < mPersonnages.size(); i++) {
+                    mPersonnages[i]->setSelection(false);
                 }
             }
          }
