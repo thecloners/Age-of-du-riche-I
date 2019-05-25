@@ -162,7 +162,7 @@ void Partie::draw(sf::RenderTarget &target, sf::RenderStates states) const
 }
 
 // Cette fonction est appellée en continu. Elle gère tout les trucs
-// Qui pre nnent du temps (e.g : flèches, personnages qui marchent, etc)
+// Qui prennent du temps (e.g : flèches, personnages qui marchent, etc)
 void Partie::update()
 
 {
@@ -174,7 +174,8 @@ void Partie::update()
                 mPersonnages[i]->getDefensiveHitbox(),
                 mPersonnages[j]->getOffensiveHitbox()
             ))
-    
+
+
         }
 
 }
