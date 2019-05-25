@@ -39,7 +39,7 @@ class Personnage : public sf::Drawable
           Personnage(int Vie, int Degat, int Portee, int CoutEnOr, int CoutEnNourriture, int CoutEnBois, int CoutEnPierre, int vitesse, sf::Vector2f Position);
           Hitbox getDefensiveHitbox();
           Hitbox getOffensiveHitbox();
-          sf::Vector2f deplacement(float dt);
+          void deplacement();
       //Personnage(
       //    int VieMax,
       //    int Position,
@@ -49,8 +49,10 @@ class Personnage : public sf::Drawable
       //    int CoutEnPierre,
       //    int Portee
       //);
+        int getVie();
+        void setVie(int vie);
         void donneesBatiment(std::vector<Batiment*> batiments);
-        bool setSelection(bool selection );
+        void setSelection(bool selection );
         bool getSelection() const;
         sf::Vector2f getPosition() const;
         sf::Vector2f getCible() const;

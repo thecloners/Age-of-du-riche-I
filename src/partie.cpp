@@ -1,5 +1,6 @@
 #include "partie.hpp"
 #include "Personnage/villageois.hpp"
+#include <cmath>
 #include <time.h>
 using namespace std;
 
@@ -70,7 +71,8 @@ void Partie::bois(int i,int j)
 Partie::Partie()
 {
     genereMap();
-    mPersonnages.push_back(new Villageois(sf::Vector2f(50 ,50)));
+    for(unsigned int i = 0; i < 10; i++)
+        mPersonnages.push_back(new Villageois(sf::Vector2f(rand()%1000 , rand()%1000)));
     mBatiments.push_back(new Batiment(moulin, sf::Vector2f(100, 100)));
 }
 
@@ -160,7 +162,7 @@ void Partie::draw(sf::RenderTarget &target, sf::RenderStates states) const
 }
 
 // Cette fonction est appellée en continu. Elle gère tout les trucs
-// Qui prennent du temps (e.g : flèches, personnages qui marchent, etc)
+// Qui pre nnent du temps (e.g : flèches, personnages qui marchent, etc)
 void Partie::update()
 
 {
@@ -172,10 +174,54 @@ void Partie::update()
                 mPersonnages[i]->getDefensiveHitbox(),
                 mPersonnages[j]->getOffensiveHitbox()
             ))
-            setVie(mPersonnages[i])=getVie(mPersonnages[i])-5
+    
         }
 
 }
 void Partie::sendEvent(sf::Event)
 {
+
+    int v,w;
+      if (event.type == sf::Event::MouseButtonPressed )
+     {
+         if (event.mouseButton.button == sf::Mouse::Left)
+         {
+            v = event.mouseButton.x;
+            w = event.mouseButton.y;
+            for(unsigned int i = 0 ; i < mPersonnages.size(); i++)
+            {
+                if (sqrt(pow(mPersonnages[i]->getPosition().x - v ,2)+pow(mPersonnages[i]->getPosition().y - w,2)) < 50)
+                {
+                    if(mPersonnages[i]->getSelection())
+                    {
+                        mPersonnages[i]->setSelection(false);
+                    }
+                    else
+                    {
+                        mPersonnages[i]->setSelection(true);
+                    }
+                }
+                else
+                {
+                    for(unsigned int j = 0 ; j < mPersonnages.size(); j++)
+                    {
+                        mPersonnages[j]->setSelection(false);
+                    }
+                }
+            }
+         }
+         else if(event.mouseButton.button == sf::Mouse::Right)
+         {
+             v = event.mouseButton.x;
+             w = event.mouseButton.y;
+             for(unsigned int i = 0 ; i < mPersonnages.size(); i++)
+            {
+                if (mPersonnages[i]->getSelection())
+                {
+                    mPersonnages[i]->setCible(v,w);
+                    mPersonnages[i]->deplacement(); //va la position du clic
+                }
+            }
+         }
+     }
 }
