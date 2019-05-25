@@ -165,6 +165,7 @@ void Partie::draw(sf::RenderTarget &target, sf::RenderStates states) const
 // Cette fonction est appellée en continu. Elle gère tout les trucs
 // Qui pre nnent du temps (e.g : flèches, personnages qui marchent, etc)
 void Partie::update()
+
 {
     for(unsigned int i = 0 ; i < mPersonnages.size(); i++)
     {
@@ -173,21 +174,34 @@ void Partie::update()
     }
 }
 
-// Cette fonction récupère les évènements du clavier
-void Partie::sendEvent(sf::Event event )
+    int i, j;
+    for(i=0;i<mPersonnages.size();i++)
+        for(j=0;j<mPersonnages.size();j++) {
+            if(collisions(
+                mPersonnages[i]->getDefensiveHitbox(),
+                mPersonnages[j]->getOffensiveHitbox()
+            ))
+
+        }
+
+}
+void Partie::sendEvent(sf::Event)
 {
 
-    int v,w;
+    int v,w,k;
+    k = 0;
       if (event.type == sf::Event::MouseButtonPressed )
      {
          if (event.mouseButton.button == sf::Mouse::Left)
          {
             v = event.mouseButton.x;
             w = event.mouseButton.y;
+            bool yen_a_un_ka_ete_selectionne = false;
             for(unsigned int i = 0 ; i < mPersonnages.size(); i++)
             {
                 if (sqrt(pow(mPersonnages[i]->getPosition().x - v ,2)+pow(mPersonnages[i]->getPosition().y - w,2)) < 50)
                 {
+                    yen_a_un_ka_ete_selectionne = true;
                     if(mPersonnages[i]->getSelection())
                     {
                         mPersonnages[i]->setSelection(false);
@@ -197,12 +211,10 @@ void Partie::sendEvent(sf::Event event )
                         mPersonnages[i]->setSelection(true);
                     }
                 }
-                else
-                {
-                    for(unsigned int j = 0 ; j < mPersonnages.size(); j++)
-                    {
-                        mPersonnages[j]->setSelection(false);
-                    }
+            }
+            if(!yen_a_un_ka_ete_selectionne) {
+                for(unsigned int i = 0 ; i < mPersonnages.size(); i++) {
+                    mPersonnages[i]->setSelection(false);
                 }
             }
          }
