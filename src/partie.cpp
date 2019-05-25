@@ -166,7 +166,6 @@ void Partie::draw(sf::RenderTarget &target, sf::RenderStates states) const
 void Partie::update()
 {
     for(unsigned int i = 0 ; i < mPersonnages.size(); i++) {
-        mPersonnages[i]->setCible(500, 600);
         mPersonnages[i]->deplacement();
     }
 }
