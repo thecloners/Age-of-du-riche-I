@@ -71,9 +71,10 @@ void Partie::bois(int i,int j)
 Partie::Partie()
 {
     genereMap();
-    for(unsigned int i = 0; i < 10; i++)
-        mPersonnages.push_back(new Villageois(sf::Vector2f(rand()%1000 , rand()%1000)));
+    for(unsigned int i = 0; i < 500; i++)
+    mPersonnages.push_back(new Villageois(sf::Vector2f(rand()%1000 , rand()%1000)));
     mBatiments.push_back(new Batiment(moulin, sf::Vector2f(100, 100)));
+
 }
 
 // Fonction qui est appellée quand on fait window.draw(partie)
@@ -162,23 +163,55 @@ void Partie::draw(sf::RenderTarget &target, sf::RenderStates states) const
 }
 
 // Cette fonction est appellée en continu. Elle gère tout les trucs
-// Qui pre nnent du temps (e.g : flèches, personnages qui marchent, etc)
+// Qui prennent du temps (e.g : flèches, personnages qui marchent, etc)
 void Partie::update()
 
 {
+    for(unsigned int i = 0 ; i < mPersonnages.size(); i++)
+    {
+        mPersonnages[i]->deplacement();
+        mPersonnages[i]->setVie(100);
+    }
+
 
     int i, j;
     for(i=0;i<mPersonnages.size();i++)
-        for(j=0;j<mPersonnages.size();j++) {
-            if(collisions(
-                mPersonnages[i]->getDefensiveHitbox(),
-                mPersonnages[j]->getOffensiveHitbox()
-            ))
-    
+     {
+      for(j=0;j<mPersonnages.size();j++)
+      {
+            //if(collisions(mPersonnages[i]->getDefensiveHitbox(),mPersonnages[j]->getOffensiveHitbox()))
+
+
         }
+      }
 
 }
-void Partie::sendEvent(sf::Event)
+//void nuke();
+//{
+
+//int i,j,a;
+    //for (i = 0; i < TAILLE_PLATEAU; i++)
+    //{
+    //    for (j = 0;j < TAILLE_PLATEAU; j++)
+    //    {
+    //        a = srand()%4;
+    //        if (a ==0 || a == 1)
+    //        mMap[i][j] = Case(roche);
+    //        else
+    //        mMap[i][j] = Case(mer);
+    //    }
+    //}
+    //for(unsigned int i = 0 ; i < mPersonnages.size(); i++)
+    //{
+    //    mPersonnages[i]->setVie(0);
+    //}
+//}
+//void Partie::Equipe()
+//{
+//    int  equipe;
+
+//}
+void Partie::sendEvent(sf::Event event)
 {
 
     int v,w,k;
