@@ -67,10 +67,14 @@ int Personnage::getVie() {
   return mVie;
 }
 
-void Personnage::deplacement(){
+void Personnage::deplacement(Case mCarte [] [] ){
   if((abs(mPosition.x-getCible().x)>1) || (abs(mPosition.y-getCible().y)>1)) {
     mPosition.x += (getCible().x- getPosition().x) / (sqrt(pow(getPosition().x-getCible().x, 2) + pow(getPosition().y-getCible().y, 2)));
     mPosition.y += (getCible().y - getPosition().y) / (sqrt(pow(getPosition().x-getCible().x, 2) + pow(getPosition().y-getCible().y, 2)));
+  }
+
+
+
   }
   }
 
