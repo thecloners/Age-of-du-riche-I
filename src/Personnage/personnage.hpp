@@ -7,6 +7,7 @@
 #include <SFML/Graphics.hpp>
 #include <string>
 #include "../hitbox.hpp"
+#include "../Case/case.hpp"
 #include "../Batiment/batiments.hpp"
 
 using namespace std;
@@ -40,7 +41,7 @@ class Personnage : public sf::Drawable
           ~Personnage();
           Hitbox getDefensiveHitbox();
           Hitbox getOffensiveHitbox();
-          void deplacement();
+          void deplacement(Case mCarte[50][50], int tailleCase);
       //Personnage(
       //    int VieMax,
       //    int Position,
