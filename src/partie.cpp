@@ -172,19 +172,16 @@ void Partie::update()
         mPersonnages[i]->deplacement();
         mPersonnages[i]->setVie(100);
     }
-}
+
 
     int i, j;
     for(i=0;i<mPersonnages.size();i++)
      {
       for(j=0;j<mPersonnages.size();j++)
       {
-            if(collisions(mPersonnages[i]->getDefensiveHitbox(),mPersonnages[j]->getOffensiveHitbox()))
+            //if(collisions(mPersonnages[i]->getDefensiveHitbox(),mPersonnages[j]->getOffensiveHitbox()))
 
-<<<<<<< HEAD
 
-=======
->>>>>>> f48a53b52b88d14743c2207ab7b91630cb7c626b
         }
       }
 
@@ -214,7 +211,7 @@ void Partie::update()
 //    int  equipe;
 
 //}
-void Partie::sendEvent(sf::Event)
+void Partie::sendEvent(sf::Event event)
 {
 
     int v,w,k;

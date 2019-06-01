@@ -30,6 +30,9 @@ Personnage::Personnage(
                       mPosition( Position){
 }
 
+Personnage::~Personnage() {
+}
+
 //}
 
 
