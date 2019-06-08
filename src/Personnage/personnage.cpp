@@ -5,6 +5,7 @@
 #include "../hitbox.hpp"
 #include "math.h"
 #include "../Case/case.hpp"
+#include <time.h>
 using namespace std;
 using namespace sf;
 
@@ -27,8 +28,12 @@ Personnage::Personnage(
                       mCoutEnBois(CoutEnBois),
                       mCoutEnPierre(CoutEnPierre),
                       mVitesse(vitesse),
-                      mPosition( Position){
-}
+                      mPosition( Position)
+                      {
+
+                          //sf::Clock clock;
+                          //mClock = clock.getElapsedTime();
+                      }
 
 Personnage::~Personnage() {
 }
@@ -73,10 +78,7 @@ int Personnage::getVie() const {
 void Personnage::deplacement(Case mCarte[50][50], int tailleCase){
 
     float a,b;
-
     int i,j;
-
-
 
     a = mPosition.x + ( (getCible().x - getPosition().x) / (sqrt(pow(getPosition().x-getCible().x, 2) + pow(getPosition().y-getCible().y, 2))) );
     b = mPosition.y + ( (getCible().y - getPosition().y) / (sqrt(pow(getPosition().x-getCible().x, 2) + pow(getPosition().y-getCible().y, 2))) );
@@ -87,42 +89,16 @@ void Personnage::deplacement(Case mCarte[50][50], int tailleCase){
     if( mCarte[i][j].returnTypeCase() == roche)
         return;
 
+    //mClock = clock.getElapsedTime();
+
     if((abs(mPosition.x-getCible().x)>1) || (abs(mPosition.y-getCible().y)>1)) {
-        mPosition.x += (getCible().x - getPosition().x) / (sqrt(pow(getPosition().x-getCible().x, 2) + pow(getPosition().y-getCible().y, 2)));
-        mPosition.y += (getCible().y - getPosition().y) / (sqrt(pow(getPosition().x-getCible().x, 2) + pow(getPosition().y-getCible().y, 2)));
-        //mPosition.x = a;
-        //mPosition.y = b;
+        mPosition.x += /*mClock.asMilliseconds() */ mVitesse * ( (getCible().x - getPosition().x) / (sqrt(pow(getPosition().x-getCible().x, 2) + pow(getPosition().y-getCible().y, 2))));
+        mPosition.y += /*mClock.asMilliseconds() */ mVitesse * ( (getCible().y - getPosition().y) / (sqrt(pow(getPosition().x-getCible().x, 2) + pow(getPosition().y-getCible().y, 2))));
     }
 
+    //clock.restart();
 
 }
-
-
-
-
-
-
-
-
-/*sf::Vector2f Personnage::deplacement(float dt) {
-      if(abs(getPosition().x - getCible().x) >= 5) {
-          if(getPosition().x < getCible().x){
-                  mPosition.x+=mVitesse*dt;
-          } else {
-                    mPosition.x-=mVitesse*dt;
-          }
-      }
-
-      if(abs(getPosition().y - getCible().y) >= 5) {
-          if(getPosition().y<getCible().y){
-              mPosition.y+=mVitesse*dt;
-          } else {
-              mPosition.y-=mVitesse*dt;
-          }
-      }
-      cout << mPosition.x << " " << mPosition.y << endl;
-      return mPosition;
-}*/
 
 sf::Vector2f Personnage::setCible(int x,int y) {
       mCible.x=x;

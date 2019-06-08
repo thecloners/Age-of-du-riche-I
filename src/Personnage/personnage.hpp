@@ -31,6 +31,9 @@ class Personnage : public sf::Drawable
       bool mselection;
       int  mdonneesbatiment[10][10];
 
+      //sf::Time mClock;
+
+
       // Pourquoi vous avez commenté ça?
 
 

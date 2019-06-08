@@ -1,36 +1,36 @@
-#include "villageois.hpp" // Bon header! (c'est moi qui l'ai ajouté)
+#include "guerrier.hpp" // Bon header! (c'est moi qui l'ai ajouté)
 
 
 using namespace std;
 
 
 
-Villageois::Villageois(sf::Vector2f Position) : Personnage(
-                      100,
-                      100,
-                      50,
-                      10,
-                      100,
-                      100,
-                      100,
-                      1,
-                      Position
+Guerrier::Guerrier(sf::Vector2f Position) : Personnage(
+                    200,
+                    150,
+                    70,
+                    10,
+                    100,
+                    100,
+                    100,
+                    2,
+                    Position
 ) {}
 
-void Villageois::draw(sf::RenderTarget& target, sf::RenderStates states) const {
+void Guerrier::draw(sf::RenderTarget& target, sf::RenderStates states) const {
 
-    sf::CircleShape villageois(5);
+    sf::CircleShape guerrier(5);
 
     if(getSelection()==true) {
-        villageois.setOutlineThickness(4);
-        villageois.setOutlineColor(sf::Color(250, 150, 100));
+        guerrier.setOutlineThickness(4);
+        guerrier.setOutlineColor(sf::Color(250, 150, 100));
     } else {
-        villageois.setOutlineThickness(1);
+        guerrier.setOutlineThickness(1);
     }
 
-    villageois.setFillColor(sf::Color(250, 250, 50));
-    villageois.setPosition(Personnage::getPosition());
-    target.draw(villageois);
+    guerrier.setFillColor(sf::Color(250, 250, 50));
+    guerrier.setPosition(Personnage::getPosition());
+    target.draw(guerrier);
 
 
     sf::ConvexShape vie0;
@@ -58,7 +58,7 @@ void Villageois::draw(sf::RenderTarget& target, sf::RenderStates states) const {
     chapeau.setPoint(0, sf::Vector2f(-10.f, 0.f));
     chapeau.setPoint(1, sf::Vector2f(5.f, -10.f));
     chapeau.setPoint(2, sf::Vector2f(20, 0.f));
-    chapeau.setFillColor(sf::Color(0, 0, 255));
+    chapeau.setFillColor(sf::Color(255, 0 , 0 ));
     chapeau.setPosition(Personnage::getPosition().x, Personnage::getPosition().y);
     target.draw(chapeau);
 
