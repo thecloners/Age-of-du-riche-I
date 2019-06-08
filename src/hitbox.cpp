@@ -64,24 +64,29 @@ bool collisions(Hitbox obj1, Hitbox obj2){
     for (int i = 0; i < 4; i++) {
         for (int j = 0; j < 4; j++) {
             a=i;
-            if(a>=3){
+            if(a>=3)
+            {
                 a_=0;
             }
-            else{
+            else
+            {
                 a_=a+1;
             }
             b=j;
-            if(b>=3){
+
+            if(b>=3)
+            {
                 b_=0;
             }
-            else{
+            else
+            {
                 b_=b+1;
             }
-            if(lines_intersect(Tsommet1[a],Tsommet1[a_],Tsommet2[b],Tsommet2[b_])  == 1){
+            if(lines_intersect(Tsommet1[a],Tsommet1[a_],Tsommet2[b],Tsommet2[b_])  == 1)
+            {
                 return true;
             }
-
-}
-}
+        }
+    }
 return false;
 }
