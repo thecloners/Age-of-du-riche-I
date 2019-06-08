@@ -169,7 +169,7 @@ void Partie::update()
 {
     for(unsigned int i = 0 ; i < mPersonnages.size(); i++)
     {
-        mPersonnages[i]->deplacement();
+        mPersonnages[i]->deplacement(mMap, 20);
         mPersonnages[i]->setVie(100);
     }
 
@@ -253,7 +253,7 @@ void Partie::sendEvent(sf::Event event)
                 if (mPersonnages[i]->getSelection())
                 {
                     mPersonnages[i]->setCible(v,w);
-                    mPersonnages[i]->deplacement(); //va la position du clic
+                    mPersonnages[i]->deplacement(mMap, 20); //va la position du clic
                 }
             }
          }

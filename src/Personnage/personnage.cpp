@@ -4,7 +4,7 @@
 #include "personnage.hpp"
 #include "../hitbox.hpp"
 #include "math.h"
-
+#include "../Case/case.hpp"
 using namespace std;
 using namespace sf;
 
@@ -70,15 +70,16 @@ int Personnage::getVie() const {
   return mVie;
 }
 
-void Personnage::deplacement(Case mCarte [] [] ){
-  if((abs(mPosition.x-getCible().x)>1) || (abs(mPosition.y-getCible().y)>1)) {
-    mPosition.x += (getCible().x- getPosition().x) / (sqrt(pow(getPosition().x-getCible().x, 2) + pow(getPosition().y-getCible().y, 2)));
-    mPosition.y += (getCible().y - getPosition().y) / (sqrt(pow(getPosition().x-getCible().x, 2) + pow(getPosition().y-getCible().y, 2)));
-  }
+void Personnage::deplacement(Case mCarte[50][50], int tailleCase){
+    int i = ( (int (mPosition.x) + int ((getCible().x- getPosition().x) / (sqrt(pow(getPosition().x-getCible().x, 2) + pow(getPosition().y-getCible().y, 2))))) - (int (mPosition.x) + int ((getCible().x- getPosition().x) / (sqrt(pow(getPosition().x-getCible().x, 2) + pow(getPosition().y-getCible().y, 2))))) % tailleCase)/tailleCase;
+    int j = ((int (mPosition.y) + int ((getCible().y - getPosition().y) / (sqrt(pow(getPosition().x-getCible().x, 2) + pow(getPosition().y-getCible().y, 2))))) - (int (mPosition.y) + int ((getCible().y - getPosition().y) / (sqrt(pow(getPosition().x-getCible().x, 2) + pow(getPosition().y-getCible().y, 2))))) % tailleCase ) /tailleCase;
+    if( mCarte[i][j].returnTypeCase() == roche)
+        return;
+    if((abs(mPosition.x-getCible().x)>1) || (abs(mPosition.y-getCible().y)>1)) {
+        mPosition.x += (getCible().x- getPosition().x) / (sqrt(pow(getPosition().x-getCible().x, 2) + pow(getPosition().y-getCible().y, 2)));
+        mPosition.y += (getCible().y - getPosition().y) / (sqrt(pow(getPosition().x-getCible().x, 2) + pow(getPosition().y-getCible().y, 2)));
+      }
 
-
-
-  }
   }
 
 
