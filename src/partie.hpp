@@ -25,8 +25,8 @@ class Partie : public sf::Drawable
     int mNbJoueur;
     void genereMap();
     Case mMap[TAILLE_PLATEAU][TAILLE_PLATEAU];
-    std::vector<Personnage*> mPersonnages;
-    std::vector<Batiment*> mBatiments;
+    std::vector<Personnage*> mPersonnagesEquipe0;
+    std::vector<Personnage*> mPersonnagesEquipe1;
     virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
     // Fonction qui est appellée quand on fait window.draw(partie)
     // En gros, RenderTarget s'utilise comme window.
@@ -34,7 +34,7 @@ class Partie : public sf::Drawable
   public:
     std::string nom;
     Partie(); // Le constructeur, (entre autre faut qu'il appelle genereMap)
-    void setSouris(Mouse souris); // Cette fonction récupère les évènements du clavier
+    void setSouris(Mouse souris, bool equipe); // Cette fonction récupère les évènements du clavier
     void update();             // Cette fonction est appellée en continu. Elle gère tout les trucs
                                // Qui prennent du temps (e.g : flèches, personnages qui marchent, etc)
 

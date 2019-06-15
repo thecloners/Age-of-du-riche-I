@@ -34,10 +34,11 @@ int main()
             sf::Mouse::isButtonPressed(sf::Mouse::Left),
             sf::Mouse::isButtonPressed(sf::Mouse::Right)
         };
-        partie.setSouris(souris);
+        partie.setSouris(souris, 0);
         Mouse netMouse;
         packet >> netMouse.position.x >> netMouse.position.y;
         packet >> netMouse.leftPressed >> netMouse.rightPressed;
+        partie.setSouris(netMouse, 1);
         sf::CircleShape sousou(10.f);
         sousou.setFillColor(sf::Color::Green);
         sousou.setPosition(sf::Vector2f(netMouse.position.x, netMouse.position.y));

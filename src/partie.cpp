@@ -74,13 +74,9 @@ Partie::Partie()
     genereMap();
     for(unsigned int i = 0; i < 500; i++)
     {
-        mPersonnages.push_back(new Villageois(sf::Vector2f(rand()%1000 , rand()%1000)));
-        if(i%5==0)
-        {
-            mPersonnages.push_back(new Guerrier(sf::Vector2f(rand()%1000 , rand()%1000)));
-        }
+        mPersonnagesEquipe0.push_back(new Villageois(sf::Vector2f(rand()%1000 , rand()%500), 0));
+        mPersonnagesEquipe1.push_back(new Villageois(sf::Vector2f(rand()%1000 , (rand()%500)+500), 1));
     }
-    mBatiments.push_back(new Batiment(moulin, sf::Vector2f(100, 100)));
 
 }
 
@@ -161,12 +157,13 @@ void Partie::draw(sf::RenderTarget &target, sf::RenderStates states) const
             case_d.setFillColor(mMap[i][j].returnCouleur());
             target.draw(case_d);
         }
-    for(unsigned int i = 0 ; i < mPersonnages.size(); i++) {
-        target.draw(*mPersonnages[i]);
+    for(unsigned int i = 0 ; i < mPersonnagesEquipe0.size(); i++) {
+        target.draw(*mPersonnagesEquipe0[i]);
     }
-    for(unsigned int i = 0 ; i < mBatiments.size(); i++) {
-        target.draw(*mBatiments[i]);
+    for(unsigned int i = 0 ; i < mPersonnagesEquipe1.size(); i++) {
+        target.draw(*mPersonnagesEquipe1[i]);
     }
+
 }
 
 // Cette fonction est appellée en continu. Elle gère tout les trucs
@@ -174,23 +171,19 @@ void Partie::draw(sf::RenderTarget &target, sf::RenderStates states) const
 void Partie::update()
 
 {
-    for(unsigned int i = 0 ; i < mPersonnages.size(); i++)
+    for(unsigned int i = 0 ; i < mPersonnagesEquipe0.size(); i++)
     {
-        mPersonnages[i]->deplacement(mMap, 20);
-        mPersonnages[i]->setVie(100);
+        mPersonnagesEquipe0[i]->deplacement(mMap, 20);
+        mPersonnagesEquipe0[i]->setVie(100);
+    }
+    for(unsigned int i = 0 ; i < mPersonnagesEquipe1.size(); i++)
+    {
+        mPersonnagesEquipe1[i]->deplacement(mMap, 20);
+        mPersonnagesEquipe1[i]->setVie(100);
     }
 
 
-    int i, j;
-    for(i=0;i<mPersonnages.size();i++)
-     {
-      for(j=0;j<mPersonnages.size();j++)
-      {
-            //if(collisions(mPersonnages[i]->getDefensiveHitbox(),mPersonnages[j]->getOffensiveHitbox()))
 
-
-        }
-      }
 
 }
 //void nuke();
@@ -218,9 +211,9 @@ void Partie::update()
 //    int  equipe;
 
 //}
-void Partie::setSouris(Mouse souris)
+void Partie::setSouris(Mouse souris, bool equipe)
 {
-    cout << souris.position.x << "\t" << souris.position.y << "\t"<< souris.leftPressed << "\t" << souris.rightPressed << endl;
+    auto personnages = equipe ? mPersonnagesEquipe0 : mPersonnagesEquipe1;
     int v,w,k;
     k = 0;
      if (souris.leftPressed)
@@ -228,24 +221,24 @@ void Partie::setSouris(Mouse souris)
         v = souris.position.x;
         w = souris.position.y;
         bool yen_a_un_ka_ete_selectionne = false;
-        for(unsigned int i = 0 ; i < mPersonnages.size(); i++)
+        for(unsigned int i = 0 ; i < personnages.size(); i++)
         {
-            if (sqrt(pow(mPersonnages[i]->getPosition().x - v ,2)+pow(mPersonnages[i]->getPosition().y - w,2)) < 50)
+            if (sqrt(pow(personnages[i]->getPosition().x - v ,2)+pow(personnages[i]->getPosition().y - w,2)) < 50)
             {
                 yen_a_un_ka_ete_selectionne = true;
-                if(mPersonnages[i]->getSelection())
+                if(personnages[i]->getSelection())
                 {
-                    mPersonnages[i]->setSelection(false);
+                    personnages[i]->setSelection(false);
                 }
                 else
                 {
-                    mPersonnages[i]->setSelection(true);
+                    personnages[i]->setSelection(true);
                 }
             }
         }
         if(!yen_a_un_ka_ete_selectionne) {
-            for(unsigned int i = 0 ; i < mPersonnages.size(); i++) {
-                mPersonnages[i]->setSelection(false);
+            for(unsigned int i = 0 ; i < personnages.size(); i++) {
+                personnages[i]->setSelection(false);
             }
         }
      }
@@ -253,12 +246,12 @@ void Partie::setSouris(Mouse souris)
      {
          v = souris.position.x;
          w = souris.position.y;
-         for(unsigned int i = 0 ; i < mPersonnages.size(); i++)
+         for(unsigned int i = 0 ; i < personnages.size(); i++)
         {
-            if (mPersonnages[i]->getSelection())
+            if (personnages[i]->getSelection())
             {
-                mPersonnages[i]->setCible(v,w);
-                mPersonnages[i]->deplacement(mMap, 20); //va la position du clic
+                personnages[i]->setCible(v,w);
+                personnages[i]->deplacement(mMap, 20); //va la position du clic
             }
         }
      }

@@ -1,4 +1,4 @@
-#include "guerrier.hpp" // Bon header! (c'est moi qui l'ai ajouté)
+/*#include "guerrier.hpp" // Bon header! (c'est moi qui l'ai ajouté)
 
 
 using namespace std;
@@ -74,3 +74,4 @@ void Guerrier::draw(sf::RenderTarget& target, sf::RenderStates states) const {
     target.draw(epee);
 
 }
+*/

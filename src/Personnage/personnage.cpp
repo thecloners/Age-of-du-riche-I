@@ -42,7 +42,7 @@ Personnage::~Personnage() {
 
 //}
 
-int getEquipe() const {
+int Personnage::getEquipe() const {
   return mequipe;
 }
 
