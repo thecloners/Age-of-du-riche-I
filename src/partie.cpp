@@ -1,5 +1,6 @@
 #include "partie.hpp"
 #include "Personnage/villageois.hpp"
+#include "Personnage/guerrier.hpp"
 #include <cmath>
 #include <time.h>
 using namespace std;
@@ -72,7 +73,13 @@ Partie::Partie()
 {
     genereMap();
     for(unsigned int i = 0; i < 500; i++)
-    mPersonnages.push_back(new Villageois(sf::Vector2f(rand()%1000 , rand()%1000)));
+    {
+        mPersonnages.push_back(new Villageois(sf::Vector2f(rand()%1000 , rand()%1000)));
+        if(i%5==0)
+        {
+            mPersonnages.push_back(new Guerrier(sf::Vector2f(rand()%1000 , rand()%1000)));
+        }
+    }
     mBatiments.push_back(new Batiment(moulin, sf::Vector2f(100, 100)));
 
 }
