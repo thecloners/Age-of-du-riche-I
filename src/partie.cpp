@@ -72,7 +72,7 @@ void Partie::bois(int i,int j)
 Partie::Partie()
 {
     genereMap();
-    for(unsigned int i = 0; i < 500; i++)
+    for(unsigned int i = 0; i < 10; i++)
     {
         mPersonnagesEquipe0.push_back(new Villageois(sf::Vector2f(rand()%1000 , rand()%500), 0));
         mPersonnagesEquipe1.push_back(new Villageois(sf::Vector2f(rand()%1000 , (rand()%500)+500), 1));
@@ -174,13 +174,37 @@ void Partie::update()
     for(unsigned int i = 0 ; i < mPersonnagesEquipe0.size(); i++)
     {
         mPersonnagesEquipe0[i]->deplacement(mMap, 20);
-        mPersonnagesEquipe0[i]->setVie(100);
+        for(unsigned int j = 0; j < mPersonnagesEquipe1.size(); j++) {
+            if(collisions(
+                mPersonnagesEquipe0[i]->getDefensiveHitbox(),
+                mPersonnagesEquipe1[j]->getOffensiveHitbox()
+            )) {
+                mPersonnagesEquipe0[i]->setVie(
+                    mPersonnagesEquipe0[i]->getVie()-5
+                );
+            }
+        }
     }
     for(unsigned int i = 0 ; i < mPersonnagesEquipe1.size(); i++)
     {
         mPersonnagesEquipe1[i]->deplacement(mMap, 20);
-        mPersonnagesEquipe1[i]->setVie(100);
+        for(unsigned int j = 0; j < mPersonnagesEquipe0.size(); j++) {
+            if(collisions(
+                mPersonnagesEquipe1[i]->getDefensiveHitbox(),
+                mPersonnagesEquipe0[j]->getOffensiveHitbox()
+            )) {
+                mPersonnagesEquipe1[i]->setVie(
+                    mPersonnagesEquipe1[i]->getVie()-5
+                );
+            }
+        }
     }
+    for(unsigned int i = 0 ; i < mPersonnagesEquipe0.size(); i++)
+        if(mPersonnagesEquipe0[i]->getVie() < 0)
+            mPersonnagesEquipe0.erase(mPersonnagesEquipe0.begin() + i);
+    for(unsigned int i = 0 ; i < mPersonnagesEquipe1.size(); i++)
+        if(mPersonnagesEquipe1[i]->getVie() < 0)
+            mPersonnagesEquipe1.erase(mPersonnagesEquipe1.begin() + i);
 
 
 
