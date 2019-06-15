@@ -11,6 +11,14 @@
 // On hérite de la classe Drawable qui nous permet de nous faire dessiner
 #define TAILLE_PLATEAU 50
 
+
+struct Mouse {
+    sf::Vector2i position;
+    bool leftPressed;
+    bool rightPressed;
+    bool team;
+};
+
 class Partie : public sf::Drawable
 {
   private:
@@ -26,7 +34,7 @@ class Partie : public sf::Drawable
   public:
     std::string nom;
     Partie(); // Le constructeur, (entre autre faut qu'il appelle genereMap)
-    void sendEvent(sf::Event); // Cette fonction récupère les évènements du clavier
+    void setSouris(Mouse souris); // Cette fonction récupère les évènements du clavier
     void update();             // Cette fonction est appellée en continu. Elle gère tout les trucs
                                // Qui prennent du temps (e.g : flèches, personnages qui marchent, etc)
 

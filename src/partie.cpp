@@ -211,51 +211,49 @@ void Partie::update()
 //    int  equipe;
 
 //}
-void Partie::sendEvent(sf::Event event)
+void Partie::setSouris(Mouse souris)
 {
-
+    cout << souris.position.x << "\t" << souris.position.y << "\t"<< souris.leftPressed << "\t" << souris.rightPressed << endl;
     int v,w,k;
     k = 0;
-      if (event.type == sf::Event::MouseButtonPressed )
+     if (souris.leftPressed)
      {
-         if (event.mouseButton.button == sf::Mouse::Left)
-         {
-            v = event.mouseButton.x;
-            w = event.mouseButton.y;
-            bool yen_a_un_ka_ete_selectionne = false;
-            for(unsigned int i = 0 ; i < mPersonnages.size(); i++)
+        v = souris.position.x;
+        w = souris.position.y;
+        bool yen_a_un_ka_ete_selectionne = false;
+        for(unsigned int i = 0 ; i < mPersonnages.size(); i++)
+        {
+            if (sqrt(pow(mPersonnages[i]->getPosition().x - v ,2)+pow(mPersonnages[i]->getPosition().y - w,2)) < 50)
             {
-                if (sqrt(pow(mPersonnages[i]->getPosition().x - v ,2)+pow(mPersonnages[i]->getPosition().y - w,2)) < 50)
+                yen_a_un_ka_ete_selectionne = true;
+                if(mPersonnages[i]->getSelection())
                 {
-                    yen_a_un_ka_ete_selectionne = true;
-                    if(mPersonnages[i]->getSelection())
-                    {
-                        mPersonnages[i]->setSelection(false);
-                    }
-                    else
-                    {
-                        mPersonnages[i]->setSelection(true);
-                    }
-                }
-            }
-            if(!yen_a_un_ka_ete_selectionne) {
-                for(unsigned int i = 0 ; i < mPersonnages.size(); i++) {
                     mPersonnages[i]->setSelection(false);
                 }
-            }
-         }
-         else if(event.mouseButton.button == sf::Mouse::Right)
-         {
-             v = event.mouseButton.x;
-             w = event.mouseButton.y;
-             for(unsigned int i = 0 ; i < mPersonnages.size(); i++)
-            {
-                if (mPersonnages[i]->getSelection())
+                else
                 {
-                    mPersonnages[i]->setCible(v,w);
-                    mPersonnages[i]->deplacement(mMap, 20); //va la position du clic
+                    mPersonnages[i]->setSelection(true);
                 }
             }
-         }
+        }
+        if(!yen_a_un_ka_ete_selectionne) {
+            for(unsigned int i = 0 ; i < mPersonnages.size(); i++) {
+                mPersonnages[i]->setSelection(false);
+            }
+        }
      }
+     else if(souris.rightPressed)
+     {
+         v = souris.position.x;
+         w = souris.position.y;
+         for(unsigned int i = 0 ; i < mPersonnages.size(); i++)
+        {
+            if (mPersonnages[i]->getSelection())
+            {
+                mPersonnages[i]->setCible(v,w);
+                mPersonnages[i]->deplacement(mMap, 20); //va la position du clic
+            }
+        }
+     }
+
 }
