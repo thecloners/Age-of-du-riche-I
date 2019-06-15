@@ -18,7 +18,8 @@ Personnage::Personnage(
                       int CoutEnBois,
                       int CoutEnPierre,
                       int vitesse,
-                      sf::Vector2f Position)
+                      sf::Vector2f Position,
+                      int equipe)
                       : mVie(Vie),
                       mVieMax(Vie),
                       mDegat(Degat),
@@ -28,7 +29,8 @@ Personnage::Personnage(
                       mCoutEnBois(CoutEnBois),
                       mCoutEnPierre(CoutEnPierre),
                       mVitesse(vitesse),
-                      mPosition( Position)
+                      mPosition( Position),
+                      mequipe(equipe)
                       {
 
                           //sf::Clock clock;
@@ -40,6 +42,9 @@ Personnage::~Personnage() {
 
 //}
 
+int getEquipe() const {
+  return mequipe;
+}
 
 sf::Vector2f Personnage::getPosition() const
 {

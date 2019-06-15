@@ -5,7 +5,7 @@ using namespace std;
 
 
 
-Villageois::Villageois(sf::Vector2f Position) : Personnage(
+Villageois::Villageois(sf::Vector2f Position, int equipe) : Personnage(
                       100,
                       100,
                       50,
@@ -14,7 +14,8 @@ Villageois::Villageois(sf::Vector2f Position) : Personnage(
                       100,
                       100,
                       1,
-                      Position
+                      Position,
+                      equipe
 ) {}
 
 void Villageois::draw(sf::RenderTarget& target, sf::RenderStates states) const {
@@ -58,7 +59,11 @@ void Villageois::draw(sf::RenderTarget& target, sf::RenderStates states) const {
     chapeau.setPoint(0, sf::Vector2f(-10.f, 0.f));
     chapeau.setPoint(1, sf::Vector2f(5.f, -10.f));
     chapeau.setPoint(2, sf::Vector2f(20, 0.f));
+    if(Personnage::getEquipe()==0){
     chapeau.setFillColor(sf::Color(0, 0, 255));
+    } else {
+    chapeau.setFillColor(sf::Color(255, 0, 0));
+    }
     chapeau.setPosition(Personnage::getPosition().x, Personnage::getPosition().y);
     target.draw(chapeau);
 

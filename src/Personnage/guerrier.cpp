@@ -58,7 +58,7 @@ void Guerrier::draw(sf::RenderTarget& target, sf::RenderStates states) const {
     chapeau.setPoint(0, sf::Vector2f(-10.f, 0.f));
     chapeau.setPoint(1, sf::Vector2f(5.f, -10.f));
     chapeau.setPoint(2, sf::Vector2f(20, 0.f));
-    chapeau.setFillColor(sf::Color(255, 0 , 0 ));
+    chapeau.setFillColor(sf::Color(0, 0 , 255));
     chapeau.setPosition(Personnage::getPosition().x, Personnage::getPosition().y);
     target.draw(chapeau);
 

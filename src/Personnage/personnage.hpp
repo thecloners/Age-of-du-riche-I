@@ -31,6 +31,8 @@ class Personnage : public sf::Drawable
       bool mselection;
       int  mdonneesbatiment[10][10];
 
+      int mequipe;
+
       //sf::Time mClock;
 
 
@@ -40,7 +42,7 @@ class Personnage : public sf::Drawable
 
     public:
           int mVie;
-          Personnage(int Vie, int Degat, int Portee, int CoutEnOr, int CoutEnNourriture, int CoutEnBois, int CoutEnPierre, int vitesse, sf::Vector2f Position);
+          Personnage(int Vie, int Degat, int Portee, int CoutEnOr, int CoutEnNourriture, int CoutEnBois, int CoutEnPierre, int vitesse, sf::Vector2f Position, int equipe);
           ~Personnage();
           Hitbox getDefensiveHitbox();
           Hitbox getOffensiveHitbox();
@@ -54,6 +56,7 @@ class Personnage : public sf::Drawable
       //    int CoutEnPierre,
       //    int Portee
       //);
+        int getEquipe() const;
         int getVie() const;
         void setVie(int vie);
         void donneesBatiment(std::vector<Batiment*> batiments);

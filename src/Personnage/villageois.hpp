@@ -10,7 +10,7 @@
 class Villageois : public Personnage
 {
 public:
-      Villageois(sf::Vector2f Position);
+      Villageois(sf::Vector2f Position, int equipe);
 
 
 private:
